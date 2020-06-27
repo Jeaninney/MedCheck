@@ -19,7 +19,10 @@
     "fix": "eslint --fix ."
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "globals": {
+      "window": true
+    }
   },
   "browserslist": {
     "production": [

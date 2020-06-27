@@ -1,6 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+var one = 1;
+
+function number() {
+  return one;
+}
+
+number();
 
 function App() {
   return (
