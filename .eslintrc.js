@@ -49,7 +49,7 @@ module.exports = {
   "browser": true,
   "node": true,
   // "jest": true
-  "extends": ['airbnb-base',
+  extends: ['airbnb-base',
     'eslint:recommended',
     'plugin:react/recommended',
   ],
