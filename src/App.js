@@ -2,14 +2,6 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-var one = 1;
-
-function returnOne() {
-  return one;
-}
-
-returnOne();
-
 function App() {
   return (
     <div className="App">
