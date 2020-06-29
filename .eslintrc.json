@@ -5,13 +5,15 @@
         "node": true
     },
     "extends": [
-        "plugin:react/recommended",
-        "airbnb"
+        "airbnb-base",
+        "plugin:react/recommended"
+
     ],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
     },
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -25,6 +27,7 @@
     "rules": {
         "react/jsx-filename-extension": [1, {
             "extensions": [".js", ".jsx"]}
-            ]
+            ],
+        "indent": ["error", "tab"]
     }
 }
