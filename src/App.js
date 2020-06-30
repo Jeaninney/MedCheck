@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-const one = 1;
+const one = 2;
 
 function returnOne() {
   return one;
