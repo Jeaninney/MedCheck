@@ -2,13 +2,13 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-const one = 2;
+// const one = 2;
 
-function returnOne() {
-  return one;
-}
+// function returnOne() {
+//   return one;
+// }
 
-returnOne();
+// returnOne();
 
 function App() {
   return (
