@@ -12,7 +12,7 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "cd client && npm run start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "npm run lint",
     "eject": "react-scripts eject",
