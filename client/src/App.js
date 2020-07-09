@@ -13,10 +13,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Header />
-      <RegistrationForm />
+      {/* <Header />
+      <RegistrationForm /> */}
       {/* <Login /> */}
-      {/* <Home /> */}
+      <Home />
     </div>
   );
 }
