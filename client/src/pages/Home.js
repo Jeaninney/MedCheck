@@ -1,4 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
+
 
 import { Col, Row, Container } from '../components/Grid';
 
@@ -7,17 +10,17 @@ function Home() {
     <Container fluid>
       <Row>
         <Col size="md-12">
-          <button type="button" className="medications"> Medications </button>
+          <Link to = '/Medications'><button type="button" className="medications"> Medications </button></Link>
         </Col>
       </Row>
       <Row>
         <Col size="md-12">
-          <button type="button" className="doctors"> Doctors </button>
+        <Link to = '/Doctors'><button type="button" className="doctors"> Doctors </button></Link>
         </Col>
       </Row>
       <Row>
         <Col size="md-12">
-          <button type="button" className="appointments"> Appointments </button>
+        <Link to = '/Appointments'><button type="button" className="appointments"> Appointments </button></Link>
         </Col>
       </Row>
     </Container>
