@@ -19,7 +19,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 function App() {
-  let logIn = false
+  let logIn = true
   return (
     <Router>
     <div className="App">
