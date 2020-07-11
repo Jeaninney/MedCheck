@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import "./medications.css"
 import Addbutton from '../../components/Addbutton';
+import Footer from '../../components/Footer';
 
 
 
@@ -18,7 +19,7 @@ function Medications() {
   <div>
     <Addbutton />
   </div>
-      <Link to = '/'><button type="button" className="home"> HOME </button></Link>
+      <Footer />
     </div>
   );
 }

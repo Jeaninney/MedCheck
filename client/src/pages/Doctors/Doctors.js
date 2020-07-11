@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import Jumbotron from '../../components/Jumbotron';
+import Footer from '../../components/Footer';
 import "./doctors.css";
 
 
@@ -13,7 +14,7 @@ function Doctors() {
   >
     Doctors
   </div>
-      <Link to = '/'><button type="button" className="home"> Home </button></Link>
+      <Footer />
     </div>
   );
 }

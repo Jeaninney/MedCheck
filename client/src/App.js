@@ -7,7 +7,7 @@ import RegistrationForm from './components/RegistrationForm';
 import Login from './components/Login';
 
 import Home from './pages/Home';
-import Appointments from './pages/Appointments';
+import Appointments from './pages/Appointments/Appointments';
 import Doctors from './pages/Doctors/Doctors';
 import Medications from './pages/Medications/Medications';
 
