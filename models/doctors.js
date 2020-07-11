@@ -3,7 +3,11 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const doctorsSchema = new Schema({
-  apidocid: { type: String, required: true },
+  name: { type: String, required: true },
+  phone: String,
+  streetaddress: String,
+  zipcode: Number,
+  specialty: String,
 });
 
 const Doctor = mongoose.model('Doctor', doctorsSchema);

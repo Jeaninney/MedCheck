@@ -3,9 +3,10 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const medicationsSchema = new Schema({
-  apimedid: { type: String, required: true },
+  rxcui: { type: String, required: true },
   medname: String,
-  freq: String,
+  dosage: String,
+  timetotake: String,
   purpose: String,
   docid: Number,
 });
