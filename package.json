@@ -8,18 +8,14 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "express": "^4.17.1",
-    "if-env": "^1.0.4",
-    "mongoose": "^5.9.23"
+    "mongoose": "^5.9.23",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build",
-    "seed": "node scripts/seedDB.js",
+    "start": "cd client && npm run start",
+    "build": "react-scripts build",
     "test": "npm run lint",
     "eject": "react-scripts eject",
     "lint": "eslint --quiet .",
@@ -28,8 +24,19 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "devDependencies": {
-    "concurrently": "^5.2.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
