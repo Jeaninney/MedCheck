@@ -7,19 +7,20 @@ import RegistrationForm from './components/RegistrationForm';
 import Login from './components/Login';
 
 import Home from './pages/Home';
-import Appointments from './pages/Appointments';
-import Doctors from './pages/Doctors';
-import Medications from './pages/Medications';
+import Appointments from './pages/Appointments/Appointments';
+import Doctors from './pages/Doctors/Doctors';
+import Medications from './pages/Medications/Medications';
 
 
 import './App.css';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Search from './pages/Search/Search';
 
 
 
 function App() {
-  let logIn = false
+  let logIn = true
   return (
     <Router>
     <div className="App">
@@ -34,6 +35,7 @@ function App() {
       {!logIn &&<Route exact path = '/Appointments' component = {Login}></Route>}
       {!logIn &&<Route exact path = '/Doctors' component = {Login}></Route>}
       {!logIn &&<Route exact path = '/Medications' component = {Login}></Route>}
+      <Route exact path = '/Search' component = {Search}></Route>
       </Switch>
     </div>
     </Router>
