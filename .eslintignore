@@ -1,4 +1,4 @@
-src/App.test.js
-src/serviceWorker.js
-src/index.js
+client/src/App.test.js
+client/src/serviceWorker.js
+client/src/index.js
 models/index.js
