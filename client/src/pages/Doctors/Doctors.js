@@ -40,6 +40,11 @@ function Doctors() {
                 name="author"
                 placeholder="Address (required)"
               />
+              <Input
+                // onChange={handleInputChange}
+                name="author"
+                placeholder="Address2 (required)"
+              />
               {/* <TextArea
                 // onChange={handleInputChange}
                 name="synopsis"
