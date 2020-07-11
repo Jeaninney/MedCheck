@@ -3,10 +3,12 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const medicationsSchema = new Schema({
-  title: { type: String, required: true },
-  author: { type: String, required: true },
-  synopsis: String,
-  date: { type: Date, default: Date.now },
+  apimedid: { type: String, required: true },
+  freq: { type: String },
+  expiration: Date,
+  refillsleft: Number,
+  refilldate: Date,
+  docid: Number,
 });
 
 const Medication = mongoose.model('Medication', medicationsSchema);

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const doctorsSchema = new Schema({
-  APIid: { type: String, required: true },
+  apidocid: { type: String, required: true },
 });
 
 const Doctor = mongoose.model('Doctor', doctorsSchema);
