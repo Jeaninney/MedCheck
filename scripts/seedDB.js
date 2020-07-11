@@ -1,32 +1,46 @@
 const mongoose = require('mongoose');
-// const db = require('../models');
+const db = require('../models');
 
 mongoose.connect(
   process.env.MONGODB_URI
   || 'mongodb://localhost/medCheck',
 );
 
-// const bookSeed = [
-//   {
-//     title: 'Jurassic Park: The Deluxe Novelization (Jurassic Park)',
-//     author: [
-//       'Gail Herman',
-//     ],
-//     description:
-// 'Dinosaurs walk the earth once again in this story of adventure and danger.',
-//     image: 'http://books.google.com/books/content?id=uKZJDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&imgtk=AFLRE73FBLxI92131qEjKorGfzO96T3o6pHOpIW6YQsdHPy-zftyIP6PDrpsls8Ejslo-VsdIE7P0uqnhO3ZkgBQiX6tc9AVz2ysLiVfWt1uVeFvH_RwRAivyvBoHyq2zEPNm3uORkzE&source=gbs_api',
-//     link: 'https://play.google.com/store/books/details?id=uKZJDwAAQBAJ',
-//   },
-// ];
+const medSeed = [
+  {
+    rxcui: '1',
+    medname: 'ANORO',
+    dosage: '62.5 MCG',
+    timetotake: 'AM',
+    purpose: 'COPD',
+    prescribingdocid: '1',
+  },
+  {
+    rxcui: '2',
+    medname: 'AMLODIPINE DESYLATE',
+    dosage: '5 MG',
+    timetotake: 'PM',
+    purpose: 'BLOOD PRESSURE',
+    prescribingdocid: '2',
+  },
+  {
+    rxcui: '3',
+    medname: 'ASPIRIN',
+    dosage: '81 MG',
+    timetotake: 'AM',
+    purpose: 'NONE',
+    prescribingdocid: '3',
+  },
+];
 
-// db.Medication
-//   .remove({})
-//   .then(() => db.Book.collection.insertMany(bookSeed))
-//   .then((data) => {
-//     console.log(`${data.result.n} records inserted!`);
-//     process.exit(0);
-//   })
-//   .catch((err) => {
-//     console.error(err);
-//     process.exit(1);
-//   });
+db.Medication
+  .remove({})
+  .then(() => db.Medication.collection.insertMany(medSeed))
+  .then(() => {
+    // console.log(`${data.result.n} records inserted!`);
+    process.exit(0);
+  })
+  .catch((err) => {
+    // console.error = function (err) {
+    throw new Error(err);
+  });

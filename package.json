@@ -19,7 +19,8 @@
     "test": "npm run lint",
     "eject": "react-scripts eject",
     "lint": "eslint --quiet .",
-    "fix": "eslint --fix ."
+    "fix": "eslint --fix .",
+		"seed": "node scripts/seedDB.js"
   },
   "eslintConfig": {
     "extends": "react-app"
