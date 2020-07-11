@@ -8,7 +8,7 @@ const medicationsSchema = new Schema({
   dosage: String,
   timetotake: String,
   purpose: String,
-  docid: Number,
+  prescribingdocid: Number,
 });
 
 const Medication = mongoose.model('Medication', medicationsSchema);

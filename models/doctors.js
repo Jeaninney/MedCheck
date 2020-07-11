@@ -5,7 +5,8 @@ const { Schema } = mongoose;
 const doctorsSchema = new Schema({
   name: { type: String, required: true },
   phone: String,
-  streetaddress: String,
+  address: String,
+  address2: String,
   zipcode: Number,
   specialty: String,
 });
