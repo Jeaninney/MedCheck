@@ -4,10 +4,9 @@ const { Schema } = mongoose;
 
 const medicationsSchema = new Schema({
   apimedid: { type: String, required: true },
-  freq: { type: String },
-  expiration: Date,
-  refillsleft: Number,
-  refilldate: Date,
+  medname: String,
+  freq: String,
+  purpose: String,
   docid: Number,
 });
 
