@@ -18,6 +18,7 @@ function Medications() {
   </div>
   <div>
     <Addbutton />
+
   </div>
       <Footer />
     </div>
