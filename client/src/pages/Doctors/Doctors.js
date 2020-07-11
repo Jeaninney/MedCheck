@@ -12,7 +12,7 @@ function Doctors() {
     style={{ height: 300, clear: "both", paddingTop: 120, textAlign: "center" }}
     className="jumbotron" id="m2"
   >
-    Doctors
+     <p>Doctors</p>
   </div>
       <Footer />
     </div>
