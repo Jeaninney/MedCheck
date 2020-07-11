@@ -1,11 +1,18 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import Jumbotron from '../../components/Jumbotron';
+import "./doctors.css";
 
 
 function Doctors() {
   return (
     <div>
-      Doctors
+    <div
+    style={{ height: 300, clear: "both", paddingTop: 120, textAlign: "center" }}
+    className="jumbotron" id="m2"
+  >
+    Doctors
+  </div>
       <Link to = '/'><button type="button" className="home"> Home </button></Link>
     </div>
   );
