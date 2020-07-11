@@ -4,9 +4,9 @@ const { Schema } = mongoose;
 
 const appointmentsSchema = new Schema({
   purpose: { type: String, required: true },
-  apptStart: { type: Date, required: true },
-  apptEnd: { type: Date },
-  doctorId: { type: Number },
+  apptstart: { type: Date, required: true },
+  apptend: { type: Date },
+  doctorid: { type: Number },
 });
 
 const Appointment = mongoose.model('Appointment', appointmentsSchema);
