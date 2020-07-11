@@ -1,9 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import './home.css'
 
 
 
-import { Col, Row, Container } from '../components/Grid';
+import { Col, Row, Container } from '../../components/Grid';
 
 function Home() {
   return (
