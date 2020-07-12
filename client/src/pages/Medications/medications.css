@@ -1,11 +1,22 @@
-#m1{
+#m1 {
 
     background-color: lightgreen;
 }
 
-p{
+p {
     font-weight: bold;
     font-size: xx-large;
+}
+
+.text {
+   padding-left: 10px;   
+   text-align: center;
+}
+
+button {
+    width: 20%;
+    height: auto;
+    text-align: center;
 }
 
 .addBtn {
