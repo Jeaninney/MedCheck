@@ -20,13 +20,13 @@ function App() {
         {/* <Login /> */}
         <Switch>
           <Route exact path="/" component={Home} />
-          {logIn && <Route exact path="/Appointments" component={Appointments} />}
-          {logIn && <Route exact path="/Doctors" component={Doctors} />}
-          {logIn && <Route exact path="/Medications" component={Medications} />}
-          {!logIn && <Route exact path="/Appointments" component={Login} />}
-          {!logIn && <Route exact path="/Doctors" component={Login} />}
-          {!logIn && <Route exact path="/Medications" component={Login} />}
-          <Route exact path="/Search" component={Search} />
+          {logIn && <Route exact path="/appointments" component={Appointments} />}
+          {logIn && <Route exact path="/doctors" component={Doctors} />}
+          {logIn && <Route exact path="/medications" component={Medications} />}
+          {!logIn && <Route exact path="/appointments" component={Login} />}
+          {!logIn && <Route exact path="/doctors" component={Login} />}
+          {!logIn && <Route exact path="/medications" component={Login} />}
+          <Route exact path="/search" component={Search} />
         </Switch>
       </div>
     </Router>

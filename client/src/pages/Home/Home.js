@@ -9,17 +9,17 @@ function Home() {
     <Container fluid>
       <Row>
         <Col size="md-12">
-          <Link to="/Medications"><button type="button" className="medications"> Medications </button></Link>
+          <Link to="/medications"><button type="button" className="medications"> Medications </button></Link>
         </Col>
       </Row>
       <Row>
         <Col size="md-12">
-          <Link to="/Doctors"><button type="button" className="doctors"> Doctors </button></Link>
+          <Link to="/doctors"><button type="button" className="doctors"> Doctors </button></Link>
         </Col>
       </Row>
       <Row>
         <Col size="md-12">
-          <Link to="/Appointments"><button type="button" className="appointments"> Appointments </button></Link>
+          <Link to="/appointments"><button type="button" className="appointments"> Appointments </button></Link>
         </Col>
       </Row>
     </Container>
