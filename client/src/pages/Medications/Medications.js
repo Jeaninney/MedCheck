@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import API from "../../utils/API";
 import { Col, Row } from "../../components/Grid";
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './medications.css';
-import Addbutton from '../../components/Addbutton';
+//import Addbutton from '../../components/Addbutton';
 import Footer from '../../components/Footer';
 
 function Medications() {
@@ -30,48 +30,61 @@ function Medications() {
     <div>
       <div
         style={{
-          height: '33%', clear: 'both', paddingTop: 120, textAlign: 'center',
+          height: '20%', clear: 'both', paddingTop: 10, paddingBottom: 10, textAlign: 'center',
         }}
         className="jumbotron"
         id="m1"
-      >
-        <p>Medications</p>
+      ><p>Medications</p>
       </div>
       <div className="text">
-        {meds.length ? (
-          meds.map(med => (
-            <div className="outer" key={med._id}>
-              <Row >
-                <Col size="md-12">RXCUI: {med.rxcui}</Col>
-              </Row >
-              <Row>
-                <Col size="md-12">
-                  <button onClick={() => deleteMed(med._id)} className="btn delete">Delete</button>
-                  <button className="btn view">View</button>
-                </Col>
-              </Row>
-              <Row>
-                <Col size="md-12">MEDNAME: {med.medname}</Col>
-              </Row>
-              <Row>
-                <Col size="md-12">DOSAGE: {med.dosage}</Col>
-              </Row>
-              <Row>
-                <Col size="md-12">AM/PM: {med.timetotake}</Col>
-              </Row>
-              <Row>
-                <Col size="md-12">PURPOSE: {med.purpose}</Col>
-              </Row>
-              <Row>
-                <Col size="md-12">DOCTOR: {med.prescribingdocid}</Col>
-              </Row>
-            </div>  
-          ))) : (<h4>No Results to Display</h4>)
-        }
-      <div><Addbutton /></div>
-      <Footer />
-      </div>
-   </div>
+        <div className="medList">
+            {meds.length ? (
+              meds.map(med => (
+                <div className="outer" key={med._id}>
+                  <Row >
+                    <Col size="md-12">RXCUI: {med.rxcui}</Col>
+                  </Row >
+                  <Row>
+                    <Col size="md-12">
+                      <button onClick={() => deleteMed(med._id)} className="btn delete">Delete</button>
+                      <button className="btn view">View</button>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col size="md-12">MEDNAME: {med.medname}</Col>
+                  </Row>
+                  <Row>
+                    <Col size="md-12">DOSAGE: {med.dosage}</Col>
+                  </Row>
+                  <Row>
+                    <Col size="md-12">AM/PM: {med.timetotake}</Col>
+                  </Row>
+                  <Row>
+                    <Col size="md-12">PURPOSE: {med.purpose}</Col>
+                  </Row>
+                  <Row>
+                    <Col size="md-12">DOCTOR: {med.prescribingdocid}</Col>
+                  </Row>
+                </div>  
+              ))) : (<h4>No Results to Display</h4>)
+            }
+        </div>
+        <div>
+        <Row>
+        <Col size="md-12">
+            <Link to="/search">
+              <button type="button" className="addBtn"> Add </button>
+            </Link>
+          </Col>
+        </Row>
+      </div>  
+      <div>
+        <Row>
+          <Col size="md-12"><Footer /></Col>
+        </Row>
+      </div>  
+      </div>   
+    </div>
   );
 }
 
