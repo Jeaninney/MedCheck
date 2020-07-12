@@ -7,7 +7,7 @@ import './style.css';
 function Addbutton() {
 // function Addbutton(props) {
   return (
-    <Link to="/Search"><button type="button" className="addBtn"> Add </button></Link>
+    <Link to="/search"><button type="button" className="addBtn"> Add </button></Link>
   );
 }
 
