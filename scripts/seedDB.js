@@ -22,7 +22,7 @@ const medSeed = [
     dosage: '62.5 MCG',
     timetotake: 'AM',
     purpose: 'COPD',
-    prescribingdocid: 1,
+    prescribingdoc: 1,
   },
   {
     rxcui: '2',
@@ -30,7 +30,7 @@ const medSeed = [
     dosage: '5 MG',
     timetotake: 'PM',
     purpose: 'BLOOD PRESSURE',
-    prescribingdocid: 2,
+    prescribingdoc: 2,
   },
   {
     rxcui: '3',
@@ -38,7 +38,7 @@ const medSeed = [
     dosage: '81 MG',
     timetotake: 'AM',
     purpose: 'HEART',
-    prescribingdocid: 3,
+    prescribingdoc: 3,
   },
   {
     rxcui: '4',
@@ -46,7 +46,7 @@ const medSeed = [
     dosage: '1',
     timetotake: 'AM',
     purpose: 'GENERAL HEALTH',
-    prescribingdocid: 0,
+    prescribingdoc: 0,
   },
 ];
 
