@@ -1,14 +1,15 @@
 import React from 'react';
 import SearchForm from '../../components/SearchForm';
-import Footer from '../../components/Footer';
+// import Footer from '../../components/Footer';
+import HomeButton from '../../components/HomeButton';
 
-function Search() {
+function SearchMed() {
   return (
     <div>
       <SearchForm />
-      <Footer />
+      <HomeButton />
     </div>
   );
 }
 
-export default Search;
+export default SearchMed;

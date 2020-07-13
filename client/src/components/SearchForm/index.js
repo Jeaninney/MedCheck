@@ -9,7 +9,7 @@ const SearchForm = ({
 }) => {
   return (
     <form onSubmit={onSubmitHandler}>
-      <label>
+      <label>Medication Name</label>
         <input
           type="search"
           placeholder="insert name of medication"
@@ -18,7 +18,6 @@ const SearchForm = ({
           required
         />
         <button type="submit" className="searchBtn">Search</button>
-      </label>
       {error && (
         <div style={{ color: `red` }}>
           some error occurred, while fetching api

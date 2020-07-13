@@ -4,11 +4,11 @@ import './style.css';
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
-function Addbutton() {
+function AddMedBtn() {
 // function Addbutton(props) {
   return (
-    <Link to="/search"><button type="button" className="addBtn"> Add </button></Link>
+    <Link to="/addmed"><button type="button" className="addMedBtn"> Add Medication </button></Link>
   );
 }
 
-export default Addbutton;
+export default AddMedBtn;
