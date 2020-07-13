@@ -5,10 +5,10 @@ import React from 'react';
 // import { Input, TextArea, FormBtn } from '../../components/Form';
 import { Input, FormBtn } from '../../components/Form';
 import { Col, Row, Container } from '../../components/Grid';
-import './doctors.css';
+import './addmed.css';
 import HomeButton from '../../components/HomeButton';
 
-function Doctors() {
+function AddMedForm() {
   return (
     <div>
       <div
@@ -18,44 +18,41 @@ function Doctors() {
         className="jumbotron"
         id="m2"
       >
-        <p>Doctors</p>
+        <p>Add Medication</p>
       </div>
       <Container fluid>
         <Row>
           <Col size="md-12">
             <form>
+            <label>Medication Name</label>
               <Input
                 // onChange={handleInputChange}
                 name="title"
-                placeholder="Doctor Name (required)"
+                placeholder="Medication Name (required)"
+              />
+               <label>Enter Dosage</label>
+              <Input
+                // onChange={handleInputChange}
+                name="author"
+                placeholder="Add Dosage (required)"
               />
               <Input
                 // onChange={handleInputChange}
                 name="author"
-                placeholder="Specialty (required)"
+                placeholder="AM/PM (required)"
               />
               <Input
                 // onChange={handleInputChange}
                 name="author"
-                placeholder="Phone Number (required)"
+                placeholder="Medication Purpose (required)"
               />
               <Input
                 // onChange={handleInputChange}
                 name="author"
-                placeholder="Address (required)"
+                placeholder="Prescribing Doctor"
               />
-              <Input
-                // onChange={handleInputChange}
-                name="author"
-                placeholder="Address2 (required)"
-              />
-              {/* <TextArea
-                // onChange={handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
-              /> */}
               <FormBtn>
-                Submit Doctor Info
+                Submit Medication Info
               </FormBtn>
             </form>
           </Col>
@@ -66,4 +63,4 @@ function Doctors() {
   );
 }
 
-export default Doctors;
+export default AddMedForm;

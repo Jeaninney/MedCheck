@@ -1,23 +1,26 @@
-button {
-    width: 100%;
-    height: 31vh;
-    margin: 1vh;
-  }
-
   .medications {
       background-color: lightgreen;
       font-size: xx-large;
       font-weight: bold;
+      width: 100%;
+      height: 31vh;
+      margin: 1vh;
   }
   
   .doctors {
     background-color: lightskyblue;
     font-size: xx-large;
     font-weight: bold;
+    width: 100%;
+    height: 31vh;
+    margin: 1vh;
 }
 
 .appointments {
     background-color: salmon;
     font-size: xx-large;
     font-weight: bold;
+    width: 100%;
+    height: 31vh;
+    margin: 1vh;
 }

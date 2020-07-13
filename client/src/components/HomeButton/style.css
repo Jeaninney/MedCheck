@@ -1,0 +1,9 @@
+.homeBtn {
+    background-color: black;
+    height: 10vh;
+    width: 100%;
+    /* margin-top: -1rem; */
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
+}
