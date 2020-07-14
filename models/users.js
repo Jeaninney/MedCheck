@@ -37,7 +37,7 @@ const UserSchema = new mongoose.Schema(
       type: String,
       default() {
         let hash = 0;
-        for (let i = 0; i < this.email.length; i + 1) {
+        for (let i = 0; i < this.email.length; i++) {
           hash = this.email.charCodeAt(i) + ((hash << 5) - hash);
         }
         const res = (hash & 0x00ffffff).toString(16).toUpperCase();
