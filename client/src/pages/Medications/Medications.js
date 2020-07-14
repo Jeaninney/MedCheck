@@ -66,7 +66,7 @@ function Medications() {
                     <Col size="md-12">PURPOSE: {med.purpose}</Col>
                   </Row>
                   <Row>
-                    <Col size="md-12" >DOCTOR: {med.prescribingdocid}</Col>
+                    <Col size="md-12" >DOCTOR: {med.prescribingdoc}</Col>
                   </Row>
                 </div>  
               ))) : (<h4>No Results to Display</h4>)
