@@ -1,14 +1,3 @@
-.addMedBtn {
-    background-color: lightblue;
-    height: 10vh;
-    width: 100%;
-    /* margin-top: 1rem; */
-    font-size: large;
-    font-weight: bold;
-    color: white;
-    position: relative;
-}
-
 label {
     width: 20%;
     /* height: 20vh; */

@@ -3,6 +3,7 @@ import { Col, Row, Container } from '../../components/Grid';
 import { Input, FormBtn } from '../../components/Form';
 import './addmed.css';
 import HomeButton from '../../components/HomeButton';
+import BackBtn from '../../components/BackBtn';
 import API from '../../utils/API';
 
 function AddMedForm() {
@@ -67,7 +68,7 @@ function AddMedForm() {
           height: 300, clear: 'both', paddingTop: 120, textAlign: 'center',
         }}
         className="jumbotron"
-        id="m2"
+        id="m1"
       >
         <p>Add Medication</p>
       </div>
@@ -120,6 +121,11 @@ function AddMedForm() {
           </Col>
         </Row>
       </Container>
+      <Row>
+        <Col size="md-12">
+        <BackBtn />
+        </Col>
+      </Row>
       <HomeButton />
     </div>
   );
