@@ -12,6 +12,7 @@ function AddMedForm() {
   const [timeToTake, setTime] = useState('');
   const [purpose, setPurpose] = useState('');
   const [prescribingDoc, setDoctor] = useState('');
+  let passed = true;
 
   const onSubmitHandler = (e) => {
     // Prevent browser refreshing after form submission
@@ -39,27 +40,46 @@ function AddMedForm() {
   }
 
   function saveMeds() {
-    // event.preventDefault();
-    // console.log();
-    API.saveMeds({
-      rxcui: '99',
-      medname: medName,
-      dosage: dosage,
-      timetotake: timeToTake,
-      purpose: purpose, 
-      prescribingdoc: prescribingDoc
-    })
-    .then(results => {
-      //console.log(results);
-      setMedName('');
-      setDosage('');
-      setTime('');
-      setPurpose('');
-      setDoctor('');
-    })
+    if (!medName) {
+      passed = false;
+      alert("Please enter Medication Name");
+    } else if (!dosage) {
+      passed = false;
+      alert("Please enter Dosage");
+    } else if (!timeToTake) {
+      passed = false;
+      alert("Please enter a time to take");
+    }
+
+    if (!purpose) {
+      setPurpose('None given');
+    }
+
+    if (!prescribingDoc) {
+      setDoctor('None listed');
+    }
+
+    if (passed) {
+      API.saveMeds({
+        medname: medName,
+        dosage: dosage,
+        timetotake: timeToTake,
+        purpose: purpose, 
+        prescribingdoc: prescribingDoc
+      })
+      .then(results => {
+        //console.log(results);
+        setMedName('');
+        setDosage('');
+        setTime('');
+        setPurpose('');
+        setDoctor('');
+        passed = true;
+      })
       // .then(res => loadBooks())
       .catch(err => console.log(err));
-  };
+    }
+  }
 
   return (
     <div>
@@ -92,7 +112,7 @@ function AddMedForm() {
                 type='text'
                 placeholder='Add Dosage (required)'        
               />
-              <label>Time To Take (AM/PM)</label>
+              <label>Enter Time To Take </label>
               <Input
                 value={timeToTake}
                 name='timetotake'
@@ -130,6 +150,5 @@ function AddMedForm() {
     </div>
   );
 }
-
 
 export default AddMedForm;

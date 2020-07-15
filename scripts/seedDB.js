@@ -7,8 +7,6 @@ mongoose.connect(
 );
 
 // Table definition:
-//
-// rxcui: { type: String, required: true },
 //   medname: String,
 //   dosage: String,
 //   timetotake: String,
@@ -17,36 +15,32 @@ mongoose.connect(
 
 const medSeed = [
   {
-    rxcui: '1',
     medname: 'ANORO',
     dosage: '62.5 MCG',
     timetotake: 'AM',
     purpose: 'COPD',
-    prescribingdocid: 1,
+    prescribingdoc: 'Dr. Jeaninne',
   },
   {
-    rxcui: '2',
     medname: 'AMLODIPINE DESYLATE',
     dosage: '5 MG',
     timetotake: 'PM',
     purpose: 'BLOOD PRESSURE',
-    prescribingdocid: 2,
+    prescribingdoc: 'Dr. Maria',
   },
   {
-    rxcui: '3',
     medname: 'ASPRIRIN',
     dosage: '81 MG',
     timetotake: 'AM',
     purpose: 'HEART',
-    prescribingdocid: 3,
+    prescribingdoc: 'Dr. Angela',
   },
   {
-    rxcui: '4',
     medname: 'MULTI VITAMIN',
     dosage: '1',
     timetotake: 'AM',
     purpose: 'GENERAL HEALTH',
-    prescribingdocid: 0,
+    prescribingdoc: '',
   },
 ];
 
