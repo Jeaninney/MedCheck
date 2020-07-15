@@ -1,4 +1,4 @@
-.home {
+/* .home {
   background-color: black;
   color: white;
   width: 100%;
@@ -7,9 +7,171 @@
   margin-top: 10rem;
   font-weight: bold;
   font-size: xx-large;
+} */
+
+.homeBtn {
+  background-color: black;
+  height: 10vh;
+  width: 100%;
+  /* margin-top: -1rem; */
+  font-size: x-large;
+  font-weight: bold;
+  color: white;
 }
 
+.medications {
+  background-color: lightgreen;
+  font-size: xx-large;
+  font-weight: bold;
+  width: 100%;
+  height: 31vh;
+  margin: 1vh;
+}
 
+.doctors {
+background-color: lightskyblue;
+font-size: xx-large;
+font-weight: bold;
+width: 100%;
+height: 31vh;
+margin: 1vh;
+}
+
+.appointments {
+background-color: salmon;
+font-size: xx-large;
+font-weight: bold;
+width: 100%;
+height: 31vh;
+margin: 1vh;
+}
+
+#m1 {
+
+  background-color: lightgreen;
+}
+
+p {
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.text {
+ padding-left: 10px;   
+ text-align: center;
+ border: black;
+}
+
+.line {
+ border-style: solid;
+ border-width: 5px;
+ border-bottom: black;
+}
+
+.view .delete {
+  width: 20%;
+  height: auto;
+  text-align: center;
+}
+
+#m2{
+
+  background-color: lightskyblue;
+}
+
+label {
+  width: 20%;
+  /* height: 20vh; */
+}
+
+input {
+  width: 80%;
+  height: 5vh;
+  
+}
+
+#m3{
+
+  background-color: salmon;
+}
+
+.row-striped:nth-of-type(odd){
+  background-color: #efefef;
+  border-left: 4px #000000 solid;
+}
+
+.row-striped:nth-of-type(even){
+  background-color: #ffffff;
+  border-left: 4px #efefef solid;
+}
+
+.row-striped {
+    padding: 15px 0;
+}
+
+.searchBtn {
+  background-color: darkgray;
+  height: 10vh;
+  width: 100%;
+  /* margin-top: 1rem; */
+  font-size: large;
+  font-weight: bold;
+  color: white;
+  position: relative;
+}
+
+.docHome {
+  background-color: darkgrey;
+  height: 10vh;
+  width: 100%;
+  /* margin-top: 1rem; */
+  font-size: large;
+  font-weight: bold;
+  color: white;
+  position: relative;
+}
+
+.form-control {
+  width: 100%;
+  height: 20%;
+}
+
+.btn-doc {
+  background-color: lightgreen;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.return {
+  background-color: darkgrey;
+  height: 10vh;
+  width: 100%;
+  /* margin-top: 1rem; */
+  font-size: large;
+  font-weight: bold;
+  color: white;
+  position: relative;
+}
+
+.addMedBtn {
+  background-color: lightgreen;
+  color: white;
+  height: 10vh;
+  width: 100%;
+  font-size: x-large;
+  font-weight: bold;
+  position: relative;
+}
+
+.addDocBtn {
+  background-color: lightskyblue;
+  color: white;
+  height: 10vh;
+  width: 100%;
+  font-size: x-large;
+  font-weight: bold;
+  position: relative;
+}
 
 .App {
   text-align: center;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Col, Row, Container } from '../../components/Grid';
 import { Input, FormBtn } from '../../components/Form';
-import './addmed.css';
+// import './addmed.css';
 import HomeButton from '../../components/HomeButton';
 import BackBtn from '../../components/BackBtn';
 import API from '../../utils/API';

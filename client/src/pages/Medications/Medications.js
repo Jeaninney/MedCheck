@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import API from "../../utils/API";
 import { Col, Row } from "../../components/Grid";
 // import { Link } from 'react-router-dom';
-import './medications.css';
 // import Addbutton from '../../components/Addbutton';
 import SearchButton from '../../components/SearchButton';
 import HomeButton from '../../components/HomeButton';
