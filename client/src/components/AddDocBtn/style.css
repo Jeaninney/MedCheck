@@ -1,0 +1,9 @@
+.addDocBtn {
+    background-color: lightskyblue;
+    color: white;
+    height: 10vh;
+    width: 100%;
+    font-size: x-large;
+    font-weight: bold;
+    position: relative;
+}

@@ -3,10 +3,10 @@ import React from 'react';
 // import Jumbotron from '../../components/Jumbotron';
 // import Footer from '../../components/Footer';
 // import { Input, TextArea, FormBtn } from '../../components/Form';
-import { Input, FormBtn } from '../../components/Form';
 import { Col, Row, Container } from '../../components/Grid';
 import './doctors.css';
 import HomeButton from '../../components/HomeButton';
+import AddDocBtn from '../../components/AddDocBtn';
 
 function Doctors() {
   return (
@@ -23,44 +23,11 @@ function Doctors() {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <form>
-              <Input
-                // onChange={handleInputChange}
-                name="title"
-                placeholder="Doctor Name (required)"
-              />
-              <Input
-                // onChange={handleInputChange}
-                name="author"
-                placeholder="Specialty (required)"
-              />
-              <Input
-                // onChange={handleInputChange}
-                name="author"
-                placeholder="Phone Number (required)"
-              />
-              <Input
-                // onChange={handleInputChange}
-                name="author"
-                placeholder="Address (required)"
-              />
-              <Input
-                // onChange={handleInputChange}
-                name="author"
-                placeholder="Address2 (required)"
-              />
-              {/* <TextArea
-                // onChange={handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
-              /> */}
-              <FormBtn>
-                Submit Doctor Info
-              </FormBtn>
-            </form>
+            View Doctors
           </Col>
         </Row>
       </Container>
+      <AddDocBtn />
       <HomeButton />
     </div>
   );

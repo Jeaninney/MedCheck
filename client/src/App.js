@@ -10,6 +10,7 @@ import Medications from './pages/Medications/Medications';
 import './App.css';
 import Search from './pages/Search/Search';
 import AddMed from './pages/AddMed/AddMed';
+import AddDoc from './pages/AddDoc/AddDoc';
 
 function App() {
   const logIn = true;
@@ -29,6 +30,7 @@ function App() {
           {!logIn && <Route exact path="/medications" component={Login} />}
           <Route exact path="/searchmed" component={Search} />
           <Route exact path="/addmed" component={AddMed} />
+          <Route exact path="/adddoc" component={AddDoc} />
         </Switch>
       </div>
     </Router>
