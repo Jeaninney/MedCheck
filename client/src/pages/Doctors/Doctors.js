@@ -4,7 +4,7 @@ import React from 'react';
 // import Footer from '../../components/Footer';
 // import { Input, TextArea, FormBtn } from '../../components/Form';
 import { Col, Row, Container } from '../../components/Grid';
-import './doctors.css';
+// import './doctors.css';
 import HomeButton from '../../components/HomeButton';
 import AddDocBtn from '../../components/AddDocBtn';
 

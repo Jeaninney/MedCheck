@@ -5,7 +5,7 @@ import React from 'react';
 // import { Input, TextArea, FormBtn } from '../../components/Form';
 import { Input, FormBtn } from '../../components/Form';
 import { Col, Row, Container } from '../../components/Grid';
-import './adddoc.css';
+// import './adddoc.css';
 import HomeButton from '../../components/HomeButton';
 import RtnDocBtn from '../../components/RtnDocBtn';
 
