@@ -51,14 +51,6 @@ function AddMedForm() {
       alert("Please enter a time to take");
     }
 
-    if (!purpose) {
-      setPurpose('None given');
-    }
-
-    if (!prescribingDoc) {
-      setDoctor('None listed');
-    }
-
     if (passed) {
       API.saveMeds({
         medname: medName,
