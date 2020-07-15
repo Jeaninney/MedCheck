@@ -44,9 +44,6 @@ function Medications() {
             {meds.length ? (
               meds.map(med => (
                 <div className="outer border border-info rounded" key={med._id}>
-                  <Row >
-                    <Col size="md-12">RXCUI: {med.rxcui}</Col>
-                  </Row >
                   <Row>
                     <Col size="md-12">
                       <button onClick={() => deleteMed(med._id)} className="btn delete btn-danger">Delete</button>
@@ -63,10 +60,10 @@ function Medications() {
                     <Col size="md-12">AM/PM: {med.timetotake}</Col>
                   </Row>
                   <Row>
-                    <Col size="md-12">PURPOSE: {med.purpose}</Col>
+                    <Col size="md-12">PURPOSE: {med.purpose ? med.purpose : 'None Given'}</Col>
                   </Row>
                   <Row>
-                    <Col size="md-12" >DOCTOR: {med.prescribingdoc}</Col>
+                    <Col size="md-12" >DOCTOR: {med.prescribingdoc ? med.prescribingdoc : 'None Given'}</Col>
                   </Row>
                 </div>  
               ))) : (<h4>No Results to Display</h4>)
