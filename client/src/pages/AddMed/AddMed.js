@@ -86,7 +86,7 @@ function AddMedForm() {
       </div>
       <Container fluid>
         <Row>
-          <Col size="md-12">
+          <Col size='md-12'>
             <form>
             <label>Medication Name</label>
               <Input

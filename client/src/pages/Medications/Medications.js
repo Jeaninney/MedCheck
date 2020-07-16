@@ -9,8 +9,34 @@ import HomeButton from '../../components/HomeButton';
 // import Footer from '../../components/Footer';
 import AddMedBtn from '../../components/AddMedBtn'
 
+function Purpose(props) {
+  if (!props.purpose) {
+    return null;
+  }
+
+  return (
+    <Row>
+      <Col size="md-12">PURPOSE: {props.purpose}</Col>
+    </Row>
+  );
+}
+
+function Prescribing(props) {
+  if (!props.prescribe) {
+    return null;
+  }
+
+  return (
+    <Row>
+      <Col size="md-12" >DOCTOR: {props.prescribe}</Col>
+    </Row>
+  );
+}
+
+
+
 function Medications() {
-  const [meds, setMeds] = useState([])
+  const [meds, setMeds] = useState([]);
 
   useEffect(() => {
     loadMeds()
@@ -59,13 +85,9 @@ function Medications() {
                   <Row>
                     <Col size="md-12">AM/PM: {med.timetotake}</Col>
                   </Row>
-                  <Row>
-                    <Col size="md-12">PURPOSE: {med.purpose ? med.purpose : 'None Given'}</Col>
-                  </Row>
-                  <Row>
-                    <Col size="md-12" >DOCTOR: {med.prescribingdoc ? med.prescribingdoc : 'None Given'}</Col>
-                  </Row>
-                </div>  
+                  <Purpose purpose={med.purpose} />
+                  <Prescribing prescribe={med.prescribingdoc} />
+           </div>  
               ))) : (<h4>No Results to Display</h4>)
             }
         </div>

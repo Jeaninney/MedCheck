@@ -7,6 +7,8 @@ const doctorsSchema = new Schema({
   phone: String,
   address: String,
   address2: String,
+  city: String,
+  state: String,
   zipcode: Number,
   specialty: String,
 });
