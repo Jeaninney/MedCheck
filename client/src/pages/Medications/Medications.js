@@ -32,62 +32,61 @@ function Medications() {
     <div>
       <div
         style={{
-          height: '20%', clear: 'both', paddingTop: 10, paddingBottom: 10, textAlign: 'center',
+          height: '20%', clear: 'both', paddingTop: 20, paddingBottom: 20, textAlign: 'center',
         }}
-        className="jumbotron"
         id="m1"
-      ><p>Medications</p>
+      ><p>MEDICATIONS</p>
       </div>
       <div className="text">
         <div className="medList">
-            {meds.length ? (
-              meds.map(med => (
-                <div className="outer border border-info rounded" key={med._id}>
-                  <Row>
-                    <Col size="md-12">
-                      <button onClick={() => deleteMed(med._id)} className="btn delete btn-danger">Delete</button>
-                      <button className="btn view btn-info">View</button>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col size="md-12">MEDNAME: {med.medname}</Col>
-                  </Row>
-                  <Row>
-                    <Col size="md-12">DOSAGE: {med.dosage}</Col>
-                  </Row>
-                  <Row>
-                    <Col size="md-12">AM/PM: {med.timetotake}</Col>
-                  </Row>
-                  <Row>
-                    <Col size="md-12">PURPOSE: {med.purpose ? med.purpose : 'None Given'}</Col>
-                  </Row>
-                  <Row>
-                    <Col size="md-12" >DOCTOR: {med.prescribingdoc ? med.prescribingdoc : 'None Given'}</Col>
-                  </Row>
-                </div>  
-              ))) : (<h4>No Results to Display</h4>)
-            }
+          {meds.length ? (
+            meds.map(med => (
+              <div className="outer border border-info rounded" key={med._id}>
+                <Row>
+                  <Col size="md-12">
+                    <button onClick={() => deleteMed(med._id)} className="btn delete btn-danger">Delete</button>
+                    <button className="btn view btn-info">View</button>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col size="md-12">MEDNAME: {med.medname}</Col>
+                </Row>
+                <Row>
+                  <Col size="md-12">DOSAGE: {med.dosage}</Col>
+                </Row>
+                <Row>
+                  <Col size="md-12">AM/PM: {med.timetotake}</Col>
+                </Row>
+                <Row>
+                  <Col size="md-12">PURPOSE: {med.purpose ? med.purpose : 'None Given'}</Col>
+                </Row>
+                <Row>
+                  <Col size="md-12" >DOCTOR: {med.prescribingdoc ? med.prescribingdoc : 'None Given'}</Col>
+                </Row>
+              </div>
+            ))) : (<h4>No Results to Display</h4>)
+          }
+        </div>
         </div>
         <div>
-        <Row>
-        <Col size="md-12">
-         <SearchButton />
-          </Col>
-        </Row>
-      </div>
-      <div>
-        <Row>
-        <Col size="md-12">
-         <AddMedBtn />
-          </Col>
-        </Row>
-      </div>   
-      <div>
-        <Row>
-          <Col size="md-12"><HomeButton /></Col>
-        </Row>
-      </div>  
-      </div>   
+          <Row>
+            <Col size="md-12">
+              <SearchButton />
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col size="md-12">
+              <AddMedBtn />
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col size="md-12"><HomeButton /></Col>
+          </Row>
+        </div>
     </div>
   );
 }
