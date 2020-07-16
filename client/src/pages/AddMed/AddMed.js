@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Col, Row, Container } from '../../components/Grid';
 import { Input, FormBtn } from '../../components/Form';
-// import './addmed.css';
 import HomeButton from '../../components/HomeButton';
 import BackBtn from '../../components/BackBtn';
 import API from '../../utils/API';
@@ -77,9 +76,8 @@ function AddMedForm() {
     <div>
       <div
         style={{
-          height: 300, clear: 'both', paddingTop: 120, textAlign: 'center',
+          height: '20%', clear: 'both', paddingTop: 20, paddingBottom: 20, textAlign: 'center',
         }}
-        className="jumbotron"
         id="m1"
       >
         <p>Add Medication</p>

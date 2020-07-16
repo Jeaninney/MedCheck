@@ -2,17 +2,17 @@ import React from 'react';
 // import {Link} from 'react-router-dom';
 // import Footer from '../../components/Footer';
 import HomeButton from '../../components/HomeButton';
-// import './appointments.css'
-
 
 function Appointments() {
   return (
     <div>
       <div
-        style={{ height: 300, clear: "both", paddingTop: 120, textAlign: "center" }}
-        className="jumbotron" id="m3"
+        style={{
+			height: '20%', clear: 'both', paddingTop: 20, paddingBottom: 20, textAlign: 'center',
+		  }}
+		id="m3"
       >
-        <p>Appointments</p>
+        <p>APPOINTMENTS</p>
       </div>
       <div className="container">
 		<div className="row row-striped">
