@@ -10,7 +10,7 @@ function Appointments() {
         style={{
 			height: '20%', clear: 'both', paddingTop: 20, paddingBottom: 20, textAlign: 'center',
 		  }}
-		id="m3"
+		id="m3" className = 'headers'
       >
         <p>APPOINTMENTS</p>
       </div>

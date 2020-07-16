@@ -34,7 +34,7 @@ function Medications() {
         style={{
           height: '20%', clear: 'both', paddingTop: 20, paddingBottom: 20, textAlign: 'center',
         }}
-        id="m1"
+        id="m1" className = 'headers'
       ><p>MEDICATIONS</p>
       </div>
       <div className="text">
@@ -69,22 +69,12 @@ function Medications() {
         </div>
         </div>
         <div>
-          <Row>
+          <Row classes = 'fixedButtons'> 
             <Col size="md-12">
               <SearchButton />
-            </Col>
-          </Row>
-        </div>
-        <div>
-          <Row>
-            <Col size="md-12">
               <AddMedBtn />
+              <HomeButton />
             </Col>
-          </Row>
-        </div>
-        <div>
-          <Row>
-            <Col size="md-12"><HomeButton /></Col>
           </Row>
         </div>
     </div>

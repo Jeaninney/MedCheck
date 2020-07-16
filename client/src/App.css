@@ -1,5 +1,6 @@
 #m1 {
   background-color: #AAC423;
+  margin-top: 0px;
 }
 
 #m2{
@@ -8,6 +9,26 @@
 
 #m3{
   background-color: #DE3A31;
+}
+
+.headers {
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+}
+
+.main {
+  padding-top: 135px;
+  padding-bottom: 130px;
+}
+
+.fixedButtons {
+  padding-top: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  margin: 0;
 }
 
 p {

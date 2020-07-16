@@ -13,7 +13,7 @@ function Doctors() {
         style={{
           height: '20%', clear: 'both', paddingTop: 20, paddingBottom: 20, textAlign: 'center',
         }}
-        id="m2"
+        id="m2" className = 'headers'
       >
         <p>DOCTORS</p>
       </div>

@@ -78,7 +78,7 @@ function AddMedForm() {
         style={{
           height: '20%', clear: 'both', paddingTop: 20, paddingBottom: 20, textAlign: 'center',
         }}
-        id="m1"
+        id="m1" className = 'headers'
       >
         <p>Add Medication</p>
       </div>
@@ -131,12 +131,12 @@ function AddMedForm() {
           </Col>
         </Row>
       </Container>
-      <Row>
+      <Row classes='fixedButtons'>
         <Col size="md-12">
         <BackBtn />
+        <HomeButton />
         </Col>
       </Row>
-      <HomeButton />
     </div>
   );
 }
