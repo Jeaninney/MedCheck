@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import API from "../../utils/API";
 import { Col, Row } from "../../components/Grid";
-// import { Link } from 'react-router-dom';
-import './medications.css';
-// import Addbutton from '../../components/Addbutton';
 import SearchButton from '../../components/SearchButton';
 import HomeButton from '../../components/HomeButton';
 // import Footer from '../../components/Footer';
@@ -59,11 +56,10 @@ function Medications() {
     <div>
       <div
         style={{
-          height: '20%', clear: 'both', paddingTop: 10, paddingBottom: 10, textAlign: 'center',
+          height: '20%', clear: 'both', paddingTop: 20, paddingBottom: 20, textAlign: 'center',
         }}
-        className="jumbotron"
         id="m1"
-      ><p>Medications</p>
+      ><p>MEDICATIONS</p>
       </div>
       <div className="text">
         <div className="medList">
@@ -90,27 +86,27 @@ function Medications() {
            </div>  
               ))) : (<h4>No Results to Display</h4>)
             }
+
         </div>
         <div>
-        <Row>
-        <Col size="md-12">
-         <SearchButton />
-          </Col>
-        </Row>
-      </div>
-      <div>
-        <Row>
-        <Col size="md-12">
-         <AddMedBtn />
-          </Col>
-        </Row>
-      </div>   
-      <div>
-        <Row>
-          <Col size="md-12"><HomeButton /></Col>
-        </Row>
-      </div>  
-      </div>   
+          <Row>
+            <Col size="md-12">
+              <SearchButton />
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col size="md-12">
+              <AddMedBtn />
+            </Col>
+          </Row>
+        </div>
+        <div>
+          <Row>
+            <Col size="md-12"><HomeButton /></Col>
+          </Row>
+        </div>
     </div>
   );
 }

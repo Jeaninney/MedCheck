@@ -1,15 +1,187 @@
-.home {
-  background-color: black;
-  color: white;
-  width: 100%;
-  height: 31vh;
-  margin: 1vh;
-  margin-top: 10rem;
-  font-weight: bold;
-  font-size: xx-large;
+#m1 {
+  background-color: #AAC423;
 }
 
+#m2{
+  background-color: #5492CD;
+}
 
+#m3{
+  background-color: #DE3A31;
+}
+
+p {
+  font-weight: bold;
+  font-size: 225%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #0c0b10;
+  margin: 0;
+}
+
+label {
+  width: 100%;
+}
+
+input {
+  width: 80%;
+  height: 5vh;
+}
+
+.homeBtn {
+  background-color: #0c0b10;
+  height: 10vh;
+  width: 90%;
+  font-size: x-large;
+  font-weight: bold;
+  color: white;
+  border: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-bottom: 3%;
+}
+
+.medications {
+  background-color: #AAC423;
+  font-weight: bold;
+  font-size: 225%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: white;
+  width: 100%;
+  height: 33.33vh;
+  border: none;
+}
+
+.doctors {
+background-color: #5492CD;
+font-weight: bold;
+font-size: 225%;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+color: white;
+width: 100%;
+height: 33.33vh;
+border: none;
+}
+
+.appointments {
+background-color: #DE3A31;
+font-weight: bold;
+font-size: 225%;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+color: white;
+width: 100%;
+height: 33.33vh;
+border: none;
+}
+
+.text {
+  padding-left: 10px;   
+  text-align: center;
+  border: black;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+ }
+ 
+ .line {
+  border-style: solid;
+  border-width: 5px;
+  border-bottom: #0c0b10;
+ }
+ 
+ .view .delete {
+   width: 20%;
+   height: auto;
+   text-align: center;
+ }
+
+.row-striped:nth-of-type(odd){
+  background-color: #efefef;
+  border-left: 4px #0c0b10;
+}
+
+.row-striped:nth-of-type(even){
+  background-color: #ffffff;
+  border-left: 4px #efefef solid;
+}
+
+.row-striped {
+    padding: 15px 0;
+}
+
+.searchBtn {
+  margin-top: 15px;
+  background-color: darkgray;
+  height: 10vh;
+  width: 90%;
+  font-size: x-large;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  border: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.docHome {
+  background-color: darkgrey;
+  height: 10vh;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  border: none;
+  font-size: x-large;
+  width: 90%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.form-control {
+  width: 100%;
+  height: 20%;
+}
+
+.btn-doc {
+  background-color: #5492CD;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  /* width: 5%; */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.return {
+  background-color: darkgrey;
+  height: 10vh;
+  width: 90%;
+  font-size: x-large;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  border: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.addMedBtn {
+  background-color: #AAC423;
+  color: white;
+  height: 10vh;
+  width: 90%;
+  font-size: x-large;
+  font-weight: bold;
+  position: relative;
+  border: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.addDocBtn {
+  background-color: darkgray;
+  color: white;
+  height: 10vh;
+  width: 90%;
+  font-size: x-large;
+  font-weight: bold;
+  position: relative;
+  border: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 .App {
   text-align: center;
@@ -48,6 +220,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+form {
+  margin-top: 15px;
 }
 
 

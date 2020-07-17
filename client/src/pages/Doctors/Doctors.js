@@ -41,11 +41,10 @@ function Doctors() {
     <div>
       <div
         style={{
-          height: '20%', clear: 'both', paddingTop: 10, paddingBottom: 10, textAlign: 'center',
+          height: '20%', clear: 'both', paddingTop: 20, paddingBottom: 20, textAlign: 'center',
         }}
-        className="jumbotron"
-        id="m2"
-      ><p>Doctors</p>
+        id="m2" >
+        <p>DOCTORS</p>
       </div>
       <div className="text">
         <div className="medList">
