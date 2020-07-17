@@ -3,7 +3,6 @@ import API from "../../utils/API";
 import { Col, Row } from "../../components/Grid";
 import SearchButton from '../../components/SearchButton';
 import HomeButton from '../../components/HomeButton';
-// import Footer from '../../components/Footer';
 import AddMedBtn from '../../components/AddMedBtn'
 
 function Purpose(props) {
