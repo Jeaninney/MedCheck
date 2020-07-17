@@ -27,6 +27,10 @@ input {
   height: 5vh;
 }
 
+/* .text {
+  margin-bottom: 15px;
+} */
+
 .homeBtn {
   background-color: #0c0b10;
   height: 10vh;
@@ -48,6 +52,12 @@ input {
   width: 100%;
   height: 33.33vh;
   border: none;
+  /* padding-top: 10px;
+  padding-bottom: 10px; */
+}
+
+.edges {
+  padding: 10px 0;
 }
 
 .doctors {
@@ -147,6 +157,14 @@ border: none;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.btn-med {
+  background-color: #AAC423;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  /* width: 5%; */
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .return {
   background-color: darkgrey;
   height: 10vh;
@@ -175,6 +193,7 @@ border: none;
   background-color: darkgray;
   color: white;
   height: 10vh;
+  margin-top: 10px;
   width: 90%;
   font-size: x-large;
   font-weight: bold;

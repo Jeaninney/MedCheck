@@ -126,7 +126,7 @@ function AddMedForm() {
                 type='text'
                 placeholder='Prescribing Doctor'
               />
-              <FormBtn onClick={onSubmitHandler}>Submit Medication Info</FormBtn>
+              <FormBtn className='btn-med' onClick={onSubmitHandler}>Submit Medication Info</FormBtn>
             </form>
           </Col>
         </Row>

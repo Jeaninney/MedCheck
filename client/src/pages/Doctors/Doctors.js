@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import API from "../../utils/API";
 import { Col, Row } from '../../components/Grid';
-import './doctors.css';
 import HomeButton from '../../components/HomeButton';
 import AddDocBtn from '../../components/AddDocBtn';
 
@@ -82,19 +81,14 @@ function Doctors() {
               ))) : (<h4>No Results to Display</h4>)
             }
         </div>
-      <div>
-        <Row>
+   
+      </div>   
+      <Row>
         <Col size="md-12">
          <AddDocBtn />
+         <HomeButton />
           </Col>
         </Row>
-      </div>   
-      <div>
-        <Row>
-          <Col size="md-12"><HomeButton /></Col>
-        </Row>
-      </div>  
-      </div>   
     </div>
   );
 }
