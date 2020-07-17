@@ -107,6 +107,7 @@ function Medications() {
           </Row>
         </div>
     </div>
+  </div>
   );
 }
 
