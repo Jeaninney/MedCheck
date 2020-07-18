@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import API from "../../utils/API";
 import { Col, Row } from "../../components/Grid";
-import SearchButton from '../../components/SearchButton';
+//import SearchButton from '../../components/SearchButton';
 import HomeButton from '../../components/HomeButton';
-import AddMedBtn from '../../components/AddMedBtn'
+import AddMedBtn from '../../components/AddMedBtn';
 
 function Purpose(props) {
   if (!props.purpose) {
@@ -68,7 +68,6 @@ function Medications() {
                   <Row>
                     <Col size="md-12">
                       <button onClick={() => deleteMed(med._id)} className="btn delete btn-danger">Delete</button>
-                      <button className="btn view btn-info">View</button>
                     </Col>
                   </Row>
                   <Row>
@@ -87,13 +86,13 @@ function Medications() {
             }
 
         </div>
-        <div>
+        {/* <div>
           <Row>
             <Col size="md-12">
               <SearchButton />
             </Col>
           </Row>
-        </div>
+        </div> */}
         <div>
           <Row>
             <Col size="md-12">

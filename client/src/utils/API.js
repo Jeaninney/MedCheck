@@ -49,6 +49,5 @@ export default {
   // Saves a book to the database
   saveAppts: function(apptData) {
     return axios.post("/api/appointments", apptData);
-  }
-
+  }  
 };

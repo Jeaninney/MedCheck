@@ -5,7 +5,7 @@ module.exports = {
   findAll(req, res) {
     db.Appointment
       .find(req.query)
-      .sort({ date: -1 })
+      .sort({ apptdate: 1 })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
