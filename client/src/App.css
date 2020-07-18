@@ -34,7 +34,7 @@ input {
 .homeBtn {
   background-color: #0c0b10;
   height: 10vh;
-  width: 90%;
+  width: 85%;
   font-size: x-large;
   font-weight: bold;
   color: white;
@@ -120,10 +120,10 @@ border: none;
 }
 
 .searchBtn {
-  margin-top: 15px;
+  margin-top: 10px;
   background-color: darkgray;
   height: 10vh;
-  width: 90%;
+  width: 85%;
   font-size: x-large;
   font-weight: bold;
   color: white;
@@ -140,7 +140,7 @@ border: none;
   position: relative;
   border: none;
   font-size: x-large;
-  width: 90%;
+  width: 85%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -168,7 +168,7 @@ border: none;
 .return {
   background-color: darkgrey;
   height: 10vh;
-  width: 90%;
+  width: 85%;
   font-size: x-large;
   font-weight: bold;
   color: white;
@@ -181,7 +181,7 @@ border: none;
   background-color: #AAC423;
   color: white;
   height: 10vh;
-  width: 90%;
+  width: 85%;
   font-size: x-large;
   font-weight: bold;
   position: relative;
@@ -190,11 +190,10 @@ border: none;
 }
 
 .addDocBtn {
-  background-color: darkgray;
+  background-color:#5492CD;
   color: white;
   height: 10vh;
-  margin-top: 10px;
-  width: 90%;
+  width: 85%;
   font-size: x-large;
   font-weight: bold;
   position: relative;

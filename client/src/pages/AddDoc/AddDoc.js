@@ -29,7 +29,7 @@ function AddDoc() {
     const value = event.target.value;
     const name = event.target.name;
 
-    if (name === 'doctorname') { 
+    if (name === 'doctorname') {
       setDoctor(value);
     } else if (name === 'specialty') {
       setSpecialty(value);
@@ -38,12 +38,12 @@ function AddDoc() {
     } else if (name === 'addressone') {
       setAddressOne(value);
     } else if (name === 'addresstwo') {
-      setAddressTwo(value);  
+      setAddressTwo(value);
     } else if (name === 'city') {
-      setCity(value);  
+      setCity(value);
     } else if (name === 'state') {
-      setState(value);    
-    }else if (name === 'zipcode') {
+      setState(value);
+    } else if (name === 'zipcode') {
       setZipCode(value);
     }
   }
@@ -53,8 +53,8 @@ function AddDoc() {
       passed = false;
       alert(`Doctor's Name Required`);
     } else if (!phonenumber) {
-        passed = false;
-        alert('Phone Number Required');  
+      passed = false;
+      alert('Phone Number Required');
     } else if (!addressone) {
       passed = false;
       alert('Address Line One Required');
@@ -80,20 +80,20 @@ function AddDoc() {
         zipcode: zipcode,
         specialty: specialty
       })
-      .then(results => {
-        //console.log(results);
-        setDoctor('');
-        setSpecialty('');
-        setPhone('');
-        setAddressOne('');
-        setAddressTwo('');
-        setCity('');
-        setState('');
-        setZipCode('');
-        passed = true;
-      })
-      // .then(res => loadBooks())
-      .catch(err => console.log(err));
+        .then(results => {
+          //console.log(results);
+          setDoctor('');
+          setSpecialty('');
+          setPhone('');
+          setAddressOne('');
+          setAddressTwo('');
+          setCity('');
+          setState('');
+          setZipCode('');
+          passed = true;
+        })
+        // .then(res => loadBooks())
+        .catch(err => console.log(err));
     }
   }
 
@@ -110,15 +110,15 @@ function AddDoc() {
         <Row>
           <Col size='md-12'>
             <form>
-            <label>Doctor Name</label>
+              <label>Doctor Name</label>
               <Input
                 value={doctorname}
                 name='doctorname'
                 onChange={onInputChange}
                 type='text'
                 placeholder='Doctor Name (required)'
-              />  
-            <label>Specialty</label>
+              />
+              <label>Specialty</label>
               <Input
                 name='specialty'
                 placeholder='Specialty'
@@ -126,7 +126,7 @@ function AddDoc() {
                 onChange={onInputChange}
                 type='text'
               />
-             <label>Phone Number</label>
+              <label>Phone Number</label>
               <Input
                 name='phonenumber'
                 placeholder='Phone w/Area Code'
@@ -164,7 +164,7 @@ function AddDoc() {
                 placeholder='State (Required)'
                 value={state}
                 onChange={onInputChange}
-                type='text' 
+                type='text'
               />
               <label>Zip Code</label>
               <Input
@@ -172,7 +172,7 @@ function AddDoc() {
                 placeholder='Zip Code (Required)'
                 value={zipcode}
                 onChange={onInputChange}
-                type='text' 
+                type='text'
               />
               <FormBtn className='btn-doc' onClick={onSubmitHandler}>
                 Submit Doctor Info
@@ -181,8 +181,12 @@ function AddDoc() {
           </Col>
         </Row>
       </Container>
-      <RtnDocBtn />
-      <HomeButton />
+      <Row>
+        <Col size="md-12">
+          <RtnDocBtn />
+          <HomeButton />
+        </Col>
+      </Row>
     </div>
   );
 }

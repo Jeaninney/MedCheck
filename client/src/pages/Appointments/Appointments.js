@@ -2,6 +2,7 @@ import React from 'react';
 // import {Link} from 'react-router-dom';
 // import Footer from '../../components/Footer';
 import HomeButton from '../../components/HomeButton';
+import { Col, Row } from '../../components/Grid';
 
 function Appointments() {
   return (
@@ -31,10 +32,14 @@ function Appointments() {
 			</div>
 		</div>
     </div>  
-      <HomeButton />
+	<Row>
+	<Col size="md-12">
+		<HomeButton />
+		</Col>
+	</Row>
     </div>
-  
   );
 }
 
 export default Appointments;
+

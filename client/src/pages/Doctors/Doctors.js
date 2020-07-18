@@ -3,6 +3,7 @@ import API from "../../utils/API";
 import { Col, Row } from '../../components/Grid';
 import HomeButton from '../../components/HomeButton';
 import AddDocBtn from '../../components/AddDocBtn';
+import SearchButton from '../../components/SearchButton';
 
 function AddressLine2(props) {
   if (!props.addressTwo) {
@@ -12,7 +13,7 @@ function AddressLine2(props) {
   return (
     <Row>
       <Col size="md-12">ADDRESS LINE 2: {props.addressTwo} </Col >
-    </Row> 
+    </Row>
   );
 }
 
@@ -47,50 +48,54 @@ function Doctors() {
       </div>
       <div className="text">
         <div className="medList">
-            {docs.length ? (
-              docs.map(doc => (
-                <div className="outer border border-info rounded" key={doc._id}>
-                  <Row>
-                    <Col size="md-12">
-                      <button onClick={() => deleteDoc(doc._id)} className="btn delete btn-danger">Delete</button>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col size="md-12">DOCTOR: {doc.name}</Col>
-                  </Row>
-                  <Row>
-                    <Col size="md-12">PHONE: {doc.phone}</Col>
-                  </Row>
-                  <Row>
-                    <Col size="md-12">ADDRESS LINE 1: {doc.address}</Col>
-                  </Row>
-                  <AddressLine2 addressTwo={doc.address2} />
-                  <Row>
-                    <Col size="md-12" >CITY: {doc.city}</Col>
-                  </Row>
-                  <Row>
-                    <Col size="md-12" >STATE: {doc.state}</Col>
-                  </Row>
-                  <Row>
-                    <Col size="md-12" >ZIP CODE: {doc.zipcode}</Col>
-                  </Row>
-                  <Row>
-                    <Col size="md-12">SPECIALTY: {doc.specialty ? doc.specialty : 'N/A'}</Col>
-                  </Row>
-                </div>  
-              ))) : (<h4>No Results to Display</h4>)
-            }
+          {docs.length ? (
+            docs.map(doc => (
+              <div className="outer border border-info rounded" key={doc._id}>
+                <Row>
+                  <Col size="md-12">
+                    <button onClick={() => deleteDoc(doc._id)} className="btn delete btn-danger">Delete</button>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col size="md-12">DOCTOR: {doc.name}</Col>
+                </Row>
+                <Row>
+                  <Col size="md-12">PHONE: {doc.phone}</Col>
+                </Row>
+                <Row>
+                  <Col size="md-12">ADDRESS LINE 1: {doc.address}</Col>
+                </Row>
+                <AddressLine2 addressTwo={doc.address2} />
+                <Row>
+                  <Col size="md-12" >CITY: {doc.city}</Col>
+                </Row>
+                <Row>
+                  <Col size="md-12" >STATE: {doc.state}</Col>
+                </Row>
+                <Row>
+                  <Col size="md-12" >ZIP CODE: {doc.zipcode}</Col>
+                </Row>
+                <Row>
+                  <Col size="md-12">SPECIALTY: {doc.specialty ? doc.specialty : 'N/A'}</Col>
+                </Row>
+              </div>
+            ))) : (<h4>No Results to Display</h4>)
+          }
         </div>
-   
-      </div>   
+
+      </div>
       <Row>
         <Col size="md-12">
-         <AddDocBtn />
-         <HomeButton />
-          </Col>
-        </Row>
+          <SearchButton />
+          <AddDocBtn />
+          <HomeButton />
+        </Col>
+      </Row>
     </div>
   );
 }
 
 export default Doctors;
+
+
+

@@ -134,9 +134,9 @@ function AddMedForm() {
       <Row>
         <Col size="md-12">
         <BackBtn />
+        <HomeButton />
         </Col>
       </Row>
-      <HomeButton />
     </div>
   );
 }
