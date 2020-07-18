@@ -1,9 +1,61 @@
-import React from 'react';
-import { Input, FormBtn } from '../../components/Form';
+import React, { useState } from 'react';
+import { Input } from '../../components/Form';
 import { Col, Row, Container } from '../../components/Grid';
 import API from '../../utils/API';
 
 function Login() {
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+
+	let passed = true;
+	
+	const submitHandler = (e) => {
+		// Prevent browser refreshing after form submission
+		e.preventDefault();
+		// console.log(e.target);
+		// Call fetch books async function
+		submitLogin();
+	}
+
+	const onInputChange = (event) => {
+    const value = event.target.value;
+		const name = event.target.name;
+		
+    if (name === 'email') { 
+			console.log(value);
+      setEmail(value);
+    } else if (name === 'password') {
+      setPassword(value);
+		} 
+		
+  }
+	
+	function submitLogin() {
+		if (!email) {
+			passed = false;
+			alert("Please enter your email address");
+		} else if (!password) {
+			passed = false;
+			alert("Please enter your password");
+		}
+		if (passed) {
+			console.log(email);
+			API.getLogin({
+				email: email,
+				password: password
+			})
+			.then(results =>{
+				console.log(results);
+				if (results.config.password === password){
+					alert("matches!!");
+				}
+				alert("Logged in " + results.config.password);
+
+			})
+			.catch(err => console.log(err));
+		}
+	
+	}
 
   return (
     <div>
@@ -22,9 +74,9 @@ function Login() {
 							<div className="form-group form-inline">
             <label className="mr-2" >Email Address</label>
               <Input
-                // value={doctorname}
+                value={email}
                 name='email'
-                // onChange={onInputChange}
+                onChange={onInputChange}
 								type='email'
 								placeholder='Email (required)'
               />  
@@ -34,12 +86,15 @@ function Login() {
               <Input
                 name='password'
                 placeholder='password'
-                // value={specialty}
-                // onChange={onInputChange}
+                value={password}
+                onChange={onInputChange}
 								type='text'
               />
 							</div>
-              <button type="submit" className="btn btn-success">
+							<button 
+								type="submit" 
+								className="btn btn-success"
+								onClick={submitHandler}>
                 Log In
 								</button>
 								

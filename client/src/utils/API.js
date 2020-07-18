@@ -4,7 +4,6 @@ export default {
 	getApp: function() {
     return axios.get("/api/appointments");
 	},
-	
   // Gets all books
   getMeds: function() {
     return axios.get("/api/medications");
@@ -20,5 +19,9 @@ export default {
   // Saves a book to the database
   saveMeds: function(medData) {
     return axios.post("/api/medications", medData);
+	},	
+	// Saves a book to the database
+  getLogin: function(loginData) {
+    return axios.post("/api/auth/login", loginData);
   }
 };
