@@ -16,7 +16,7 @@ const SearchForm = ({
           onChange={onInputChange}
           required
         />
-        <button type="submit" className="searchMedName">Search</button>
+        <button type="submit" className="searchMedName">Search Medication Interactions</button>
       {error && (
         <div style={{ color: `red` }}>
           some error occurred, while fetching api

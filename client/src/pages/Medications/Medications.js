@@ -62,10 +62,10 @@ function Medications() {
         <div className="medList">
           {meds.length ? (
             meds.map(med => (
-              <div className="outer border border-info rounded" key={med._id}>
+              <div className="outer border rounded" key={med._id}>
                 <Row>
                   <Col size="md-12">
-                    <button onClick={() => deleteMed(med._id)} className="btn delete btn-danger">Delete</button>
+                    <button onClick={() => deleteMed(med._id)} className="btn delete">Delete</button>
                     <button className="btn view btn-info">View</button>
                   </Col>
                 </Row>
