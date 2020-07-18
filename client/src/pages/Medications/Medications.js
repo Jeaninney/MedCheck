@@ -70,13 +70,13 @@ function Medications() {
                   </Col>
                 </Row>
                 <Row>
-                  <Col size="md-12">MEDNAME: {med.medname}</Col>
+                  <Col size="md-12"><b>MEDNAME:</b> {med.medname}</Col>
                 </Row>
                 <Row>
-                  <Col size="md-12">DOSAGE: {med.dosage}</Col>
+                  <Col size="md-12"><b>DOSAGE:</b>  {med.dosage}</Col>
                 </Row>
                 <Row>
-                  <Col size="md-12">AM/PM: {med.timetotake}</Col>
+                  <Col size="md-12"><b>AM/PM:</b>  {med.timetotake}</Col>
                 </Row>
                 <Purpose purpose={med.purpose} />
                 <Prescribing prescribe={med.prescribingdoc} />

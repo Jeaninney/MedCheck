@@ -56,26 +56,26 @@ function Doctors() {
                   </Col>
                 </Row>
                 <Row>
-                  <Col size="md-12">DOCTOR: {doc.name}</Col>
+                  <Col size="md-12"><b>DOCTOR:</b> {doc.name}</Col>
                 </Row>
                 <Row>
-                  <Col size="md-12">PHONE: {doc.phone}</Col>
+                  <Col size="md-12"><b>PHONE:</b> {doc.phone}</Col>
                 </Row>
                 <Row>
-                  <Col size="md-12">ADDRESS LINE 1: {doc.address}</Col>
+                  <Col size="md-12"><b>ADDRESS LINE 1:</b> {doc.address}</Col>
                 </Row>
                 <AddressLine2 addressTwo={doc.address2} />
                 <Row>
-                  <Col size="md-12" >CITY: {doc.city}</Col>
+                  <Col size="md-12" ><b>CITY:</b> {doc.city}</Col>
                 </Row>
                 <Row>
-                  <Col size="md-12" >STATE: {doc.state}</Col>
+                  <Col size="md-12" ><b>STATE:</b> {doc.state}</Col>
                 </Row>
                 <Row>
-                  <Col size="md-12" >ZIP CODE: {doc.zipcode}</Col>
+                  <Col size="md-12" ><b>ZIP CODE:</b> {doc.zipcode}</Col>
                 </Row>
                 <Row>
-                  <Col size="md-12">SPECIALTY: {doc.specialty ? doc.specialty : 'N/A'}</Col>
+                  <Col size="md-12"><b>SPECIALTY:</b> {doc.specialty ? doc.specialty : 'N/A'}</Col>
                 </Row>
               </div>
             ))) : (<h4>No Results to Display</h4>)
