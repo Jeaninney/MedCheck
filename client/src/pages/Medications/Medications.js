@@ -29,8 +29,6 @@ function Prescribing(props) {
   );
 }
 
-
-
 function Medications() {
   const [meds, setMeds] = useState([]);
 

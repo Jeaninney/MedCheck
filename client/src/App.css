@@ -23,13 +23,10 @@ label {
 }
 
 input {
-  width: 80%;
+  width: 85%;
   height: 5vh;
-}
-
-/* .text {
   margin-bottom: 15px;
-} */
+}
 
 .homeBtn {
   background-color: #0c0b10;
@@ -52,8 +49,6 @@ input {
   width: 100%;
   height: 33.33vh;
   border: none;
-  /* padding-top: 10px;
-  padding-bottom: 10px; */
 }
 
 .col-md-12 {
@@ -132,6 +127,22 @@ border: none;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.searchDocName {
+  background-color: #5492CD;
+  font-weight: bold;
+  margin-bottom: .3rem;
+  width: 40%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.searchMedName {
+  background-color: #AAC423;
+  font-weight: bold;
+  margin-bottom: .3rem;
+  width: 40%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .docHome {
   background-color: darkgrey;
   height: 10vh;
@@ -152,7 +163,7 @@ border: none;
 .btn-doc {
   background-color: #5492CD;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: .3rem;
   /* width: 5%; */
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -160,7 +171,7 @@ border: none;
 .btn-med {
   background-color: #AAC423;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: .3rem;
   /* width: 5%; */
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -241,7 +252,7 @@ border: none;
 }
 
 form {
-  margin-top: 15px;
+  margin: 15px 15px;
 }
 
 
