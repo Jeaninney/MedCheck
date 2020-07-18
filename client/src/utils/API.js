@@ -33,6 +33,22 @@ export default {
   // Saves a book to the database
   saveDocs: function(docData) {
     return axios.post("/api/doctors", docData);
+  },
+  // Gets all doctors
+  getAppts: function() {
+    return axios.get("/api/appointments");
+  },
+  // Gets the book with the given id
+  getApptsId: function(id) {
+    return axios.get("/api/appointments/" + id);
+  },
+  // Deletes the book with the given id
+  deleteAppts: function(id) {
+    return axios.delete("/api/appointments/" + id);
+  },
+  // Saves a book to the database
+  saveAppts: function(apptData) {
+    return axios.post("/api/appointments", apptData);
   }
 
 };
