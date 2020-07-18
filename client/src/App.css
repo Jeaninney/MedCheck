@@ -56,8 +56,8 @@ input {
   padding-bottom: 10px; */
 }
 
-.edges {
-  padding: 10px 0;
+.col-md-12 {
+  padding: 0px;
 }
 
 .doctors {
