@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import API from "../../utils/API";
 import { Col, Row } from '../../components/Grid';
-import './doctors.css';
 import HomeButton from '../../components/HomeButton';
 import AddDocBtn from '../../components/AddDocBtn';
 
