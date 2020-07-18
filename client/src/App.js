@@ -11,6 +11,7 @@ import './App.css';
 import Search from './pages/Search/Search';
 import AddMed from './pages/AddMed/AddMed';
 import AddDoc from './pages/AddDoc/AddDoc';
+import AddAppt from './pages/AddAppt/AddAppt';
 
 function App() {
   const logIn = true;
@@ -31,6 +32,7 @@ function App() {
           <Route exact path="/searchmed" component={Search} />
           <Route exact path="/addmed" component={AddMed} />
           <Route exact path="/adddoc" component={AddDoc} />
+          <Route exact path="/addappt" component={AddAppt} />
         </Switch>
       </div>
     </Router>

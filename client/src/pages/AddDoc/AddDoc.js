@@ -4,7 +4,6 @@ import { Col, Row, Container } from '../../components/Grid';
 import HomeButton from '../../components/HomeButton';
 import RtnDocBtn from '../../components/RtnDocBtn';
 import API from '../../utils/API';
-import './adddoc.css';
 
 function AddDoc() {
   const [doctorname, setDoctor] = useState('');
