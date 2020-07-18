@@ -3,7 +3,6 @@ import API from "../../utils/API";
 import { Col, Row } from '../../components/Grid';
 import HomeButton from '../../components/HomeButton';
 import AddDocBtn from '../../components/AddDocBtn';
-import SearchButton from '../../components/SearchButton';
 
 function AddressLine2(props) {
   if (!props.addressTwo) {
@@ -86,7 +85,6 @@ function Doctors() {
       </div>
       <Row>
         <Col size="md-12">
-          <SearchButton />
           <AddDocBtn />
           <HomeButton />
         </Col>

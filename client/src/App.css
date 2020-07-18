@@ -127,14 +127,6 @@ border: none;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.searchDocName {
-  background-color: #5492CD;
-  font-weight: bold;
-  margin-bottom: .3rem;
-  width: 40%;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
 .searchMedName {
   background-color: #AAC423;
   font-weight: bold;
