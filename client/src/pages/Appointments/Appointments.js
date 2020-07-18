@@ -2,6 +2,7 @@ import React from 'react';
 // import {Link} from 'react-router-dom';
 // import Footer from '../../components/Footer';
 import HomeButton from '../../components/HomeButton';
+import AddApptBtn from '../../components/AddApptBtn';
 
 function Appointments() {
   return (
@@ -30,7 +31,8 @@ function Appointments() {
 				<p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			</div>
 		</div>
-    </div>  
+    </div>
+		<AddApptBtn />
       <HomeButton />
     </div>
   
