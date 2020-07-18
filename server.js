@@ -6,9 +6,10 @@ const MongoStore = require('connect-mongo')(session);
 
 const PORT = process.env.PORT || 3001;
 
-const app = express();
 const passport = require('./passport/setup');
 const routes = require('./routes');
+
+const app = express();
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/medCheck', { useNewUrlParser: true });
 
@@ -19,7 +20,7 @@ app.use(express.json());
 // Express Session
 app.use(
   session({
-    secret: 'very secret this is',
+    secret: 'if you try the best you can',
     resave: false,
     saveUninitialized: true,
     store: new MongoStore({ mongooseConnection: mongoose.connection }),
@@ -28,6 +29,7 @@ app.use(
 
 // Passport middleware
 app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(routes);
 

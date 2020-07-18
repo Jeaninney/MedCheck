@@ -1,7 +1,10 @@
 import axios from "axios";
 
 export default {
-    
+	getApp: function() {
+    return axios.get("/api/appointments");
+	},
+	
   // Gets all books
   getMeds: function() {
     return axios.get("/api/medications");

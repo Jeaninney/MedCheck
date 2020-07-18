@@ -3,11 +3,15 @@ const db = require('../models');
 // Defining methods for the medicationsController
 module.exports = {
   findAll(req, res) {
-    db.Appointment
-      .find(req.query)
-      .sort({ date: -1 })
-      .then((dbModel) => res.json(dbModel))
-      .catch((err) => res.status(422).json(err));
+		if (req.user) {
+			db.Appointment
+				.find(req.query)
+				.sort({ date: -1 })
+				.then((dbModel) => res.json(dbModel))
+				.catch((err) => res.status(422).json(err));
+		} else {
+			res.status(401).end();
+		}
   },
   findById(req, res) {
     db.Appointment
