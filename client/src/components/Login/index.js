@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Header from '../Header';
 
-function Login(props) {
+function LoginForm(props) {
   const [state, setState] = useState({
     email: '',
     password: '',
   });
 
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setState((prevState) => ({
-      ...prevState,
-      [id]: value,
-    }));
-  };
+  // const handleChange = (e) => {
+  //   const { id, value } = e.target;
+  //   setState((prevState) => ({
+  //     ...prevState,
+  //     [id]: value,
+  //   }));
+  // };
 
   // const handleSubmitClick = (e) => {
   //   e.preventDefault();
@@ -24,6 +26,7 @@ function Login(props) {
   // }
   return (
     <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
+			<Header>Log In</Header>
       <form>
         <div className="form-group text-left">
           <label htmlFor="exampleInputEmail1">Email address</label>
@@ -34,9 +37,8 @@ function Login(props) {
             aria-describedby="emailHelp"
             placeholder="Enter email"
             value={state.email}
-            onChange={handleChange}
+            // onChange={handleChange}
           />
-          <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div className="form-group text-left">
           <label htmlFor="exampleInputPassword1">Password</label>
@@ -46,19 +48,21 @@ function Login(props) {
             id="password"
             placeholder="Password"
             value={state.password}
-            onChange={handleChange}
+            // onChange={handleChange}
           />
         </div>
         <button
           type="submit"
-          className="btn btn-primary"
+          className="btn btn-success"
           // onClick={handleSubmitClick}
         >
-          Login
+          Log In
         </button>
-      </form>
+      </form><br /><br />
+			Don't have an account? 
+			<Link to="./registrationForm"><button type="button" className="btn btn-primary"> Click here to create an account </button></Link>
     </div>
   );
 }
 
-export default Login;
+export default LoginForm;

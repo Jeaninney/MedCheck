@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 // The ...props means, spread all of the passed props onto this element
 // That way we don't have to define them all individually
-function SearchButton() {
+function RtnApptBtn() {
 // function Addbutton(props) {
   return (
-    <Link to="/searchmed"><button type="button" className="searchBtn"> Search </button></Link>
+    <Link to="/appointments"><button type="button" className="apptHome"> Return to Appointments </button></Link>
   );
 }
 
-export default SearchButton;
+export default RtnApptBtn;

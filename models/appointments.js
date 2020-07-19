@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const appointmentsSchema = new Schema({
-
   purpose: { type: String, required: true },
   apptdate: { type: String, required: true },
   apptstart: { type: String, required: true },
