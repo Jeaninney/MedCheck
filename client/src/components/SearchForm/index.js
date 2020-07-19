@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 
 const SearchForm = ({
   onSubmitHandler,
@@ -17,7 +16,7 @@ const SearchForm = ({
           onChange={onInputChange}
           required
         />
-        <button type="submit" className="searchBtn">Search</button>
+		<button type="submit" className="searchMedName">Search</button>
       {error && (
         <div style={{ color: `red` }}>
           some error occurred, while fetching api
