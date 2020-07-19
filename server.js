@@ -1,34 +1,45 @@
 const express = require('express');
-const path = require('path');
-
 const mongoose = require('mongoose');
+const path = require('path');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/medCheck', { useNewUrlParser: true });
 const PORT = process.env.PORT || 3001;
+
+const passport = require('./passport/setup');
+const routes = require('./routes');
+
 const app = express();
 
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true });
-// const PORT = process.env.PORT || 3001;
-// const app = express();
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/medCheck', { useNewUrlParser: true });
 
 // Define middleware here
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-const routes = require('./routes');
+// Express Session
+app.use(
+  session({
+    secret: 'if you try the best you can',
+    resave: false,
+    saveUninitialized: true,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+  }),
+);
+
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(routes);
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
+  // app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, './client/build/index.html'));
+  });
 }
-
-// Define API routes here
-// Define any API routes before this runs
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './client/build/index.html'));
-});
 
 app.listen(PORT, () => {
   // eslint-disable-next-line no-console

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import API from "../../utils/API";
 import { Col, Row } from "../../components/Grid";
-import SearchButton from '../../components/SearchButton';
+// import SearchButton from '../../components/SearchButton';
 import HomeButton from '../../components/HomeButton';
 import AddMedBtn from '../../components/AddMedBtn'
 
@@ -66,7 +66,7 @@ function Medications() {
                 <Row>
                   <Col size="md-12">
                     <button onClick={() => deleteMed(med._id)} className="btn delete">Delete</button>
-                    <button className="btn view btn-info">View</button>
+                    {/* <button className="btn view btn-info">View</button> */}
                   </Col>
                 </Row>
                 <Row>
@@ -87,7 +87,7 @@ function Medications() {
       </div>
       <Row>
         <Col size="md-12">
-          <SearchButton />
+          {/* <SearchButton /> */}
           <AddMedBtn />
           <HomeButton />
         </Col>

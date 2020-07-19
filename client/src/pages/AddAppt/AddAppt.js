@@ -5,7 +5,6 @@ import HomeButton from '../../components/HomeButton';
 import RtnApptBtn from '../../components/RtnApptBtn';
 import API from '../../utils/API';
 
-
 function AddAppt() {
   const [purpose, setPurpose] = useState('');
   const [apptdate, setApptDate] = useState('');
@@ -16,6 +15,67 @@ function AddAppt() {
 
   let passed = true;
 
+  function validateDate(date)  
+  {
+    var datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
+      if (datePattern.test(date)) { 
+          console.log(date)
+          let monthfield=date.split("/")[0];
+          let dayfield=date.split("/")[1];
+          let yearfield=date.split("/")[2];
+
+          switch (parseInt(monthfield)) {
+            case 1:
+            case 3:
+            case 5: 
+            case 7: 
+            case 8:
+            case 10:
+            case 12:
+              if (parseInt(dayfield) > 0 && (parseInt(dayfield) < 32)) {
+                return true;
+              } else {
+                return false;
+              }
+              
+            case 4:
+            case 6:
+            case 9: 
+            case 11: 
+              if (parseInt(dayfield) > 0 && (parseInt(dayfield) < 31)) {
+                return true;
+              } else {
+                return false;
+              }
+
+            case 2:
+              if (parseInt(yearfield) % 4 === 0) {
+                if (parseInt(dayfield) > 0 && (parseInt(dayfield) < 30)) {
+                  return true;
+                } else {
+                  return false;
+                }
+              } else {
+                if (parseInt(dayfield) > 0 && (parseInt(dayfield) < 29)) {
+                  return true;
+                } else {
+                  return false;
+                }  
+              }
+
+              default:
+                return false;  
+
+          }
+      }
+  }
+  
+  
+  function validateTime(time)  {
+    var timePattern = /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
+      return timePattern.test(time);
+  }
+          
   const onSubmitHandler = (e) => {
     // Prevent browser refreshing after form submission
     e.preventDefault();
@@ -44,6 +104,9 @@ function AddAppt() {
   }
 
   function saveAppts() {
+
+    passed = true;
+    
     if (!purpose) {
       passed = false;
       alert('Purpose Required');
@@ -53,6 +116,24 @@ function AddAppt() {
     } else if (!apptstart) {
       passed = false;
       alert('Start Time Required');
+    }
+    
+    if (!validateDate(apptdate)) {
+      console.log(passed);
+      alert('Date is invalid.  Please correct!!!');
+      passed = false;
+    }
+
+    if (!validateTime(apptstart)) {
+      passed = false;
+      alert('Starting time is invalid.  Please correct!!!');
+    }
+
+    if (apptend) {
+      if (!validateTime(apptend)) {
+        passed = false;
+        alert('End time is invalid.  Please correct!!!');
+      }
     }
 
     if (passed) {
@@ -103,7 +184,7 @@ function AddAppt() {
               <label>Date</label>
               <Input
                 name='apptdate'
-                placeholder='MM-DD-YYYY'
+                placeholder='MM/DD/YYYY'
                 value={apptdate}
                 onChange={onInputChange}
                 type='text'
@@ -154,8 +235,7 @@ function AddAppt() {
         </Col>
       </Row>
     </div>
-  );
-}
+    );
+}  
 
 export default AddAppt;
-
