@@ -8,7 +8,7 @@ import Appointments from './pages/Appointments/Appointments';
 import Doctors from './pages/Doctors/Doctors';
 import Medications from './pages/Medications/Medications';
 import './App.css';
-import Search from './pages/Search/Search';
+//import Search from './pages/Search/Search';
 import AddMed from './pages/AddMed/AddMed';
 import AddDoc from './pages/AddDoc/AddDoc';
 import AddAppt from './pages/AddAppt/AddAppt';
@@ -29,7 +29,7 @@ function App() {
           {!logIn && <Route exact path="/appointments" component={Login} />}
           {!logIn && <Route exact path="/doctors" component={Login} />}
           {!logIn && <Route exact path="/medications" component={Login} />}
-          <Route exact path="/searchmed" component={Search} />
+          {/* <Route exact path="/searchmed" component={Search} /> */}
           <Route exact path="/addmed" component={AddMed} />
           <Route exact path="/adddoc" component={AddDoc} />
           <Route exact path="/addappt" component={AddAppt} />
