@@ -4,6 +4,17 @@ import { Col, Row } from '../../components/Grid';
 import HomeButton from '../../components/HomeButton';
 import AddDocBtn from '../../components/AddDocBtn';
 
+function Specialty(props) {
+  if (!props.specialty) {
+    return null;
+  }
+  return (
+    <Row>
+    <Col size="md-12">SPECIALTY: {props.specialty}</Col>
+  </Row>
+  );
+}
+
 function AddressLine2(props) {
   if (!props.addressTwo) {
     return null;
@@ -74,9 +85,7 @@ function Doctors() {
                 <Row>
                   <Col size="md-12" >ZIP CODE: {doc.zipcode}</Col>
                 </Row>
-                <Row>
-                  <Col size="md-12">SPECIALTY: {doc.specialty ? doc.specialty : 'N/A'}</Col>
-                </Row>
+                <Specialty specialty={doc.specialty} />
               </div>
             ))) : (<h4>No Results to Display</h4>)
           }
