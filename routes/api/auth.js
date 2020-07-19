@@ -45,8 +45,8 @@ router.post('/api/signup', (req, res) => {
 
 // Route for logging user out
 router.get('/logout', (req, res) => {
-	req.logout();
-	res.json(req.user);
+  req.logout();
+  res.json(req.user);
   // res.redirect('/');
 });
 

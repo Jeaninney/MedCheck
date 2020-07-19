@@ -19,7 +19,7 @@ function AddressLine2(props) {
 function Specialty(props) {
   if (!props.specialty) {
     return null;
-  }
+	}
 
   return (
     <Row>
