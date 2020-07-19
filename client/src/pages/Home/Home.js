@@ -1,25 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './home.css';
-
 import { Col, Row, Container } from '../../components/Grid';
 
 function Home() {
   return (
     <Container fluid>
-      <Row>
-        <Col size="md-12">
-          <Link to="/medications"><button type="button" className="medications"> Medications </button></Link>
-        </Col>
-      </Row>
-      <Row>
-        <Col size="md-12">
-          <Link to="/doctors"><button type="button" className="doctors"> Doctors </button></Link>
-        </Col>
-      </Row>
-      <Row>
-        <Col size="md-12">
-          <Link to="/appointments"><button type="button" className="appointments"> Appointments </button></Link>
+      <Row >
+        <Col size="md-12" className="edges">
+          <Link to="/medications"><button type="button" className="medications"> MEDICATIONS </button></Link>
+          <Link to="/doctors"><button type="button" className="doctors"> DOCTORS </button></Link>
+          <Link to="/appointments"><button type="button" className="appointments"> APPOINTMENTS </button></Link>
         </Col>
       </Row>
     </Container>

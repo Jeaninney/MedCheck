@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Col, Row, Container } from '../../components/Grid';
 import { Input, FormBtn } from '../../components/Form';
-import './addmed.css';
 import HomeButton from '../../components/HomeButton';
+import BackBtn from '../../components/BackBtn';
 import API from '../../utils/API';
 
 function AddMedForm() {
@@ -11,6 +11,7 @@ function AddMedForm() {
   const [timeToTake, setTime] = useState('');
   const [purpose, setPurpose] = useState('');
   const [prescribingDoc, setDoctor] = useState('');
+  let passed = true;
 
   const onSubmitHandler = (e) => {
     // Prevent browser refreshing after form submission
@@ -38,42 +39,52 @@ function AddMedForm() {
   }
 
   function saveMeds() {
-    // event.preventDefault();
-    // console.log();
-    API.saveMeds({
-      rxcui: '99',
-      medname: medName,
-      dosage: dosage,
-      timetotake: timeToTake,
-      purpose: purpose, 
-      prescribingdoc: prescribingDoc
-    })
-    .then(results => {
-      //console.log(results);
-      setMedName('');
-      setDosage('');
-      setTime('');
-      setPurpose('');
-      setDoctor('');
-    })
+    if (!medName) {
+      passed = false;
+      alert("Please enter Medication Name");
+    } else if (!dosage) {
+      passed = false;
+      alert("Please enter Dosage");
+    } else if (!timeToTake) {
+      passed = false;
+      alert("Please enter a time to take");
+    }
+
+    if (passed) {
+      API.saveMeds({
+        medname: medName,
+        dosage: dosage,
+        timetotake: timeToTake,
+        purpose: purpose, 
+        prescribingdoc: prescribingDoc
+      })
+      .then(results => {
+        //console.log(results);
+        setMedName('');
+        setDosage('');
+        setTime('');
+        setPurpose('');
+        setDoctor('');
+        passed = true;
+      })
       // .then(res => loadBooks())
       .catch(err => console.log(err));
-  };
+    }
+  }
 
   return (
     <div>
       <div
         style={{
-          height: 300, clear: 'both', paddingTop: 120, textAlign: 'center',
+          height: '20%', clear: 'both', paddingTop: 20, paddingBottom: 20, textAlign: 'center',
         }}
-        className="jumbotron"
-        id="m2"
+        id="m1"
       >
         <p>Add Medication</p>
       </div>
       <Container fluid>
         <Row>
-          <Col size="md-12">
+          <Col size='md-12'>
             <form>
             <label>Medication Name</label>
               <Input
@@ -91,7 +102,7 @@ function AddMedForm() {
                 type='text'
                 placeholder='Add Dosage (required)'        
               />
-              <label>Time To Take (AM/PM)</label>
+              <label>Enter Time To Take </label>
               <Input
                 value={timeToTake}
                 name='timetotake'
@@ -115,15 +126,19 @@ function AddMedForm() {
                 type='text'
                 placeholder='Prescribing Doctor'
               />
-              <FormBtn onClick={onSubmitHandler}>Submit Medication Info</FormBtn>
+              <FormBtn className='btn-med' onClick={onSubmitHandler}>Submit Medication Info</FormBtn>
             </form>
           </Col>
         </Row>
       </Container>
-      <HomeButton />
+      <Row>
+        <Col size="md-12">
+        <BackBtn />
+        <HomeButton />
+        </Col>
+      </Row>
     </div>
   );
 }
-
 
 export default AddMedForm;

@@ -39,6 +39,7 @@ function App() {
           <Route exact path="/adddoc" component={AddDoc} />
           <Route exact path="/addappt" component={AddAppt} />
 					</div> : <Redirect to="/login" />}
+
         </Switch>
       </div>
     </Router>

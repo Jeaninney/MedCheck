@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function HomeButton() {
 // function Addbutton(props) {
   return (
-		<Link to="/"><button type="button" className="homeBtn"> Home </button></Link>
+    <Link to="/"><button type="button" className="homeBtn"> Home </button></Link>
   );
 }
 

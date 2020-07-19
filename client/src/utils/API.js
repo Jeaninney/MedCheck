@@ -19,9 +19,38 @@ export default {
   // Saves a book to the database
   saveMeds: function(medData) {
     return axios.post("/api/medications", medData);
-	},	
-	// Saves a book to the database
-  getLogin: function(loginData) {
-    return axios.post("/api/auth/login", loginData);
+  },
+  // Gets all doctors
+  getDocs: function() {
+    return axios.get("/api/doctors");
+  },
+  // Gets the book with the given id
+  getDocsId: function(id) {
+    return axios.get("/api/doctors/" + id);
+  },
+  // Deletes the book with the given id
+  deleteDocs: function(id) {
+    return axios.delete("/api/doctors/" + id);
+  },
+  // Saves a book to the database
+  saveDocs: function(docData) {
+    return axios.post("/api/doctors", docData);
+  },
+  // Gets all doctors
+  getAppts: function() {
+    return axios.get("/api/appointments");
+  },
+  // Gets the book with the given id
+  getApptsId: function(id) {
+    return axios.get("/api/appointments/" + id);
+  },
+  // Deletes the book with the given id
+  deleteAppts: function(id) {
+    return axios.delete("/api/appointments/" + id);
+  },
+  // Saves a book to the database
+  saveAppts: function(apptData) {
+    return axios.post("/api/appointments", apptData);
   }
+
 };

@@ -19,9 +19,9 @@ export function TextArea(props) {
 }
 
 export function FormBtn(props) {
-	return (
-		<button {...props} style={{ height: 40, width: 250 }}>
-			{props.children}
-		</button>
-	);
+  return (
+    <button {...props} style={{ height: 40, width: 250 }} >
+      {props.children}
+    </button>
+  );
 }
