@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input, FormBtn } from '../../components/Form';
 import { Col, Row, Container } from '../../components/Grid';
-import API from '../../utils/API';
+// import API from '../../utils/API';
 
 function SignUp() {
 
@@ -24,12 +24,19 @@ function SignUp() {
                 name='email'
                 // onChange={onInputChange}
                 type='text'
-                placeholder='Email (required)'
+                placeholder='enter your email address'
               />  
             <label>Password</label>
               <Input
                 name='password'
-                placeholder='password (required)'
+                placeholder='create a new password'
+                // value={specialty}
+                // onChange={onInputChange}
+                type='text'
+              />
+							<Input
+                name='confirm'
+                placeholder='confirm your password'
                 // value={specialty}
                 // onChange={onInputChange}
                 type='text'
