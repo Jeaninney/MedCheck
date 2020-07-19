@@ -4,17 +4,6 @@ import { Col, Row } from '../../components/Grid';
 import HomeButton from '../../components/HomeButton';
 import AddDocBtn from '../../components/AddDocBtn';
 
-function Specialty(props) {
-  if (!props.specialty) {
-    return null;
-  }
-  return (
-    <Row>
-    <Col size="md-12">SPECIALTY: {props.specialty}</Col>
-  </Row>
-  );
-}
-
 function AddressLine2(props) {
   if (!props.addressTwo) {
     return null;
@@ -24,6 +13,18 @@ function AddressLine2(props) {
     <Row>
       <Col size="md-12">ADDRESS LINE 2: {props.addressTwo} </Col >
     </Row>
+  );
+}
+
+function Specialty(props) {
+  if (!props.specialty) {
+    return null;
+	}
+	
+  return (
+    <Row>
+    <Col size="md-12">SPECIALTY: {props.specialty}</Col>
+  </Row>
   );
 }
 
