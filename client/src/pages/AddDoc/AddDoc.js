@@ -5,6 +5,16 @@ import HomeButton from '../../components/HomeButton';
 import RtnDocBtn from '../../components/RtnDocBtn';
 import API from '../../utils/API';
 
+function validatePhoneNo(phone)  {
+  var phoneNumPattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+    return phoneNumPattern.test(phone);
+}
+
+function validateZipCode(zip) {
+  var zipCodePattern = /^\d{5}$|^\d{5}-\d{4}$/;
+   return zipCodePattern.test(zip);
+}
+
 function AddDoc() {
   const [doctorname, setDoctor] = useState('');
   const [specialty, setSpecialty] = useState('');
@@ -20,8 +30,6 @@ function AddDoc() {
   const onSubmitHandler = (e) => {
     // Prevent browser refreshing after form submission
     e.preventDefault();
-    console.log(e.target);
-    // Call fetch books async function
     saveDocs();
   }
 
@@ -29,26 +37,65 @@ function AddDoc() {
     const value = event.target.value;
     const name = event.target.name;
 
-    if (name === 'doctorname') {
-      setDoctor(value);
-    } else if (name === 'specialty') {
-      setSpecialty(value);
-    } else if (name === 'phonenumber') {
-      setPhone(value);
-    } else if (name === 'addressone') {
-      setAddressOne(value);
-    } else if (name === 'addresstwo') {
-      setAddressTwo(value);
-    } else if (name === 'city') {
-      setCity(value);
-    } else if (name === 'state') {
-      setState(value);
-    } else if (name === 'zipcode') {
-      setZipCode(value);
+    switch (name) 
+    {
+      case 'doctorname': 
+      {
+        setDoctor(value);
+        break;
+      }
+
+      case 'specialty':
+        {
+          setSpecialty(value);
+          break;
+        } 
+
+      case 'phonenumber':
+        {
+          setPhone(value);
+          break;
+        }  
+
+      case 'addressone':
+        {
+          setAddressOne(value);
+          break;
+        }
+
+        case 'addresstwo':
+        {
+          setAddressTwo(value);
+          break;
+        }
+
+        case 'city':
+          {
+            setCity(value);
+            break;
+          }
+
+        case 'state':
+          {
+            setState(value);
+            break;
+          }  
+
+        case 'zipcode':
+          {
+            setZipCode(value);
+            break;
+          }  
+
+        default:  
+        {
+          break;  
+        }
     }
   }
 
   function saveDocs() {
+    passed = true;
     if (!doctorname) {
       passed = false;
       alert(`Doctor's Name Required`);
@@ -67,6 +114,20 @@ function AddDoc() {
     } else if (!zipcode) {
       passed = false;
       alert('Zip Code Required');
+    }
+
+    if (validateZipCode(zipcode)) {
+      passed = true;
+    } else {
+      passed = false;
+      alert("Zip code is invalid");
+    }
+
+    if (validatePhoneNo(phonenumber)) {
+      passed = true;
+    } else {
+      passed = false;
+      alert("Phone number is invalid");
     }
 
     if (passed) {
@@ -90,7 +151,6 @@ function AddDoc() {
           setCity('');
           setState('');
           setZipCode('');
-          passed = true;
         })
         // .then(res => loadBooks())
         .catch(err => console.log(err));

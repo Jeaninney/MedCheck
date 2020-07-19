@@ -55,6 +55,8 @@ function Notes(props) {
 	  };
   }
 
+ 
+
 function Appointments() {
 	const [appts, setAppts] = useState([]);
 
