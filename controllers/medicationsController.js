@@ -6,7 +6,7 @@ module.exports = {
     if (req.user) {
       db.Medication
         .find(req.query)
-        .sort({ medname: -1 })
+        .sort({ medname: 1 })
         .then((dbModel) => res.json(dbModel))
         .catch((err) => res.status(422).json(err));
     } else {
