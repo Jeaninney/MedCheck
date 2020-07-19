@@ -4,7 +4,8 @@ import { Col, Row, Container } from '../../components/Grid';
 import HomeButton from '../../components/HomeButton';
 import RtnApptBtn from '../../components/RtnApptBtn';
 import API from '../../utils/API';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function AddAppt() {
     const [purpose, setPurpose] = useState('');
@@ -15,6 +16,8 @@ function AddAppt() {
     const [notes, setNotes] = useState('');
     
     let passed = true;
+
+    const notify = (toastText) => toast(toastText);
 
   const onSubmitHandler = (e) => {
     // Prevent browser refreshing after form submission
@@ -46,13 +49,13 @@ function AddAppt() {
   function saveAppts() {
     if (!purpose) {
         passed = false;
-        alert('Purpose Required');  
+      notify ('Purpose Required');  
     } else if (!apptdate) {
       passed = false;
-      alert(`Appointment Date Required`);
+      notify(`Appointment Date Required`);
     } else if (!apptstart) {
         passed = false;
-        alert('Start Time Required');  
+      notify('Start Time Required');  
     }
 
     if (passed) {
@@ -81,6 +84,7 @@ function AddAppt() {
 
   return (
     <div>
+            <ToastContainer/>
       <div
         style={{
           height: '20%', clear: 'both', paddingTop: 20, paddingBottom: 20, textAlign: 'center',

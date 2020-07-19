@@ -15,8 +15,8 @@ import AddAppt from './pages/AddAppt/AddAppt';
 import API from "./utils/API";
 
 function App() {
-	const [loggedin, setloggedin] = useState(false);
-	
+  const [loggedin, setloggedin] = useState(false);
+  	
 	useEffect(() => {
 		API.getLogin()
 			.then(_ => setloggedin(true))
