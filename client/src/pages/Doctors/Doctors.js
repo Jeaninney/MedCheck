@@ -20,7 +20,7 @@ function Specialty(props) {
   if (!props.specialty) {
     return null;
 	}
-	
+
   return (
     <Row>
     <Col size="md-12">SPECIALTY: {props.specialty}</Col>
