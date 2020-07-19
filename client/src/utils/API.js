@@ -1,9 +1,18 @@
 import axios from "axios";
 
 export default {
-	getApp: function() {
-    return axios.get("/api/appointments");
+	// Gets all books
+  getLogin: function(userdata) {
+    return axios.post("/api/auth/login", userdata);
 	},
+	// Gets all books
+  getUserData: function() {
+    return axios.get("/api/auth/user_data");
+	},
+	// Gets all books
+  getLogout: function() {
+    return axios.get("/api/auth/logout");
+  },
   // Gets all books
   getMeds: function() {
     return axios.get("/api/medications");

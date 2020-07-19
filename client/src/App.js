@@ -18,7 +18,7 @@ function App() {
 	const [loggedin, setloggedin] = useState(false);
 	
 	useEffect(() => {
-		API.getApp()
+		API.getLogin()
 			.then(_ => setloggedin(true))
 			.catch(_ => setloggedin(false));
 	}, []);
@@ -28,7 +28,7 @@ function App() {
       <div className="App">
         <Switch>
           <Route exact path={["/", "/login"]} component={Login} />
-					{loggedin ? <div>
+					{/* {loggedin ? <div> */}
           <Route exact path="/home" component={Home} />
           <Route exact path="/appointments" component={Appointments} />
           <Route exact path="/doctors" component={Doctors} />
@@ -38,7 +38,7 @@ function App() {
           <Route exact path="/addmed" component={AddMed} />
           <Route exact path="/adddoc" component={AddDoc} />
           <Route exact path="/addappt" component={AddAppt} />
-					</div> : <Redirect to="/login" />}
+					{/* </div> : <Redirect to="/login" />} */}
 
         </Switch>
       </div>

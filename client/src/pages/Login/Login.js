@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import { Link } from 'react-router-dom';
 import { Input } from '../../components/Form';
 import { Col, Row, Container } from '../../components/Grid';
 import API from '../../utils/API';
@@ -9,13 +10,13 @@ function Login() {
 
 	let passed = true;
 	
-	const submitHandler = (e) => {
-		// Prevent browser refreshing after form submission
-		e.preventDefault();
-		// console.log(e.target);
-		// Call fetch books async function
-		submitLogin();
-	}
+	// const submitHandler = (e) => {
+	// 	// Prevent browser refreshing after form submission
+	// 	e.preventDefault();
+	// 	// console.log(e.target);
+	// 	// Call fetch books async function
+	// 	submitLogin();
+	// }
 
 	const onInputChange = (event) => {
     const value = event.target.value;
@@ -30,31 +31,23 @@ function Login() {
 		
   }
 	
-	function submitLogin() {
-		if (!email) {
-			passed = false;
-			alert("Please enter your email address");
-		} else if (!password) {
-			passed = false;
-			alert("Please enter your password");
-		}
-		if (passed) {
-			console.log(email);
-			API.getLogin({
+	const submitLogin = (e) => {
+		e.preventDefault();
+		console.log("email" + email);
+		console.log(password);
+		API.getLogin({
 				email: email,
 				password: password
 			})
 			.then(results =>{
 				console.log(results);
 				if (results.config.password === password){
-					alert("matches!!");
+					
 				}
-				alert("Logged in " + results.config.password);
-
+				window.location.href="/home";
 			})
 			.catch(err => console.log(err));
-		}
-	
+	 
 	}
 
   return (
@@ -94,9 +87,10 @@ function Login() {
 							<button 
 								type="submit" 
 								className="btn btn-success"
-								onClick={submitHandler}>
+								onClick={submitLogin}>
                 Log In
 								</button>
+								{/* <Link to="/home"><button type="button" className="homeBtn"> Home </button></Link> */}
 								
             </form>
           </Col>
