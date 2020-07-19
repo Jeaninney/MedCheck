@@ -93,12 +93,44 @@ border: none;
   border-width: 5px;
   border-bottom: #0c0b10;
  }
+
+ .border {
+  padding-top: 5px;
+  margin-bottom: 10px;
+  background-color: #ebebec;
+  border: none;
+  padding-bottom: 5px;
+}
  
- .view .delete {
+ .view {
    width: 20%;
    height: auto;
    text-align: center;
+   border: none;
+   background-color: #58595b;
+   color: white;
+   font-weight: bold;
+   font-size: small;
+   padding: 3px 3px;
+   margin-bottom: 5px;
+   margin-top: 5px;
+
  }
+
+.delete {
+  width: 20%;
+  height: auto;
+  text-align: center;
+  background-color:#F8B71E;
+  border: none;
+  color: #0c0b10;
+  font-weight: bold;
+  font-size: small;
+  padding: 3px 3px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+
+}
 
 .row-striped:nth-of-type(odd){
   background-color: #efefef;
@@ -131,7 +163,7 @@ border: none;
   background-color: #AAC423;
   font-weight: bold;
   margin-bottom: .3rem;
-  width: 40%;
+  width: 75%;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -156,8 +188,14 @@ border: none;
   background-color: #5492CD;
   font-weight: bold;
   margin-bottom: .3rem;
-  /* width: 5%; */
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btn-appt {
+  background-color: #DE3A31;
+  font-weight: bold;
+  margin-bottom: .3rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
 }
 
 .btn-med {
@@ -169,6 +207,18 @@ border: none;
 }
 
 .return {
+  background-color: darkgrey;
+  height: 10vh;
+  width: 85%;
+  font-size: x-large;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  border: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.apptHome {
   background-color: darkgrey;
   height: 10vh;
   width: 85%;
@@ -194,6 +244,18 @@ border: none;
 
 .addDocBtn {
   background-color:#5492CD;
+  color: white;
+  height: 10vh;
+  width: 85%;
+  font-size: x-large;
+  font-weight: bold;
+  position: relative;
+  border: none;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.addApptBtn {
+  background-color: #DE3A31;
   color: white;
   height: 10vh;
   width: 85%;

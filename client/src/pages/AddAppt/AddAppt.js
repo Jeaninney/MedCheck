@@ -6,7 +6,6 @@ import RtnApptBtn from '../../components/RtnApptBtn';
 import API from '../../utils/API';
 
 function AddAppt() {
-
   const [purpose, setPurpose] = useState('');
   const [apptdate, setApptDate] = useState('');
   const [apptstart, setApptStart] = useState('');
@@ -89,7 +88,7 @@ function AddAppt() {
     const value = event.target.value;
     const name = event.target.name;
 
-    if (name === 'purpose') { 
+    if (name === 'purpose') {
       setPurpose(value);
     } else if (name === 'apptdate') {
       setApptDate(value);
@@ -98,9 +97,9 @@ function AddAppt() {
     } else if (name === 'apptend') {
       setApptEnd(value);
     } else if (name === 'doctor') {
-      setDoctor(value);  
+      setDoctor(value);
     } else if (name === 'notes') {
-      setNotes(value);  
+      setNotes(value);
     }
   }
 
@@ -109,14 +108,14 @@ function AddAppt() {
     passed = true;
     
     if (!purpose) {
-        passed = false;
-        alert('Purpose Required');  
+      passed = false;
+      alert('Purpose Required');
     } else if (!apptdate) {
       passed = false;
       alert(`Appointment Date Required`);
     } else if (!apptstart) {
-        passed = false;
-        alert('Start Time Required');  
+      passed = false;
+      alert('Start Time Required');
     }
     
     if (!validateDate(apptdate)) {
@@ -146,18 +145,18 @@ function AddAppt() {
         doctor: doctor,
         notes: notes
       })
-      .then(results => {
-        //console.log(results);
-        setPurpose('');
-        setApptDate('');
-        setApptStart('');
-        setApptEnd('');
-        setDoctor('');
-        setNotes('');
-        passed = true;
-      })
-      // .then(res => loadBooks())
-      .catch(err => console.log(err));
+        .then(results => {
+          //console.log(results);
+          setPurpose('');
+          setApptDate('');
+          setApptStart('');
+          setApptEnd('');
+          setDoctor('');
+          setNotes('');
+          passed = true;
+        })
+        // .then(res => loadBooks())
+        .catch(err => console.log(err));
     }
   }
 
@@ -167,22 +166,22 @@ function AddAppt() {
         style={{
           height: '20%', clear: 'both', paddingTop: 20, paddingBottom: 20, textAlign: 'center',
         }}
-        id="m2" >
+        id="m3" >
         <p>APPOINTMENTS</p>
       </div>
       <Container fluid>
         <Row>
           <Col size='md-12'>
             <form>
-            <label>Purpose</label>
+              <label>Purpose</label>
               <Input
                 value={purpose}
                 name='purpose'
                 onChange={onInputChange}
                 type='text'
                 placeholder='Purpose for appointment'
-              />  
-            <label>Date</label>
+              />
+              <label>Date</label>
               <Input
                 name='apptdate'
                 placeholder='MM/DD/YYYY'
@@ -190,7 +189,7 @@ function AddAppt() {
                 onChange={onInputChange}
                 type='text'
               />
-             <label>Start Time</label>
+              <label>Start Time</label>
               <Input
                 name='apptstart'
                 placeholder='HH:MM'
@@ -198,7 +197,7 @@ function AddAppt() {
                 onChange={onInputChange}
                 type='text'
               />
-             <label>End Time</label>
+              <label>End Time</label>
               <Input
                 name='apptend'
                 placeholder='End Time'
@@ -222,19 +221,21 @@ function AddAppt() {
                 onChange={onInputChange}
                 type='text'
               />
-              <FormBtn onClick={onSubmitHandler}>
+              <FormBtn className='btn-appt' onClick={onSubmitHandler}>
                 Submit Appointment Info
               </FormBtn>
             </form>
           </Col>
         </Row>
       </Container>
-      <RtnApptBtn />
-      <HomeButton />
+      <Row>
+        <Col size="md-12">
+          <RtnApptBtn />
+          <HomeButton />
+        </Col>
+      </Row>
     </div>
     );
 }  
-    
-
 
 export default AddAppt;

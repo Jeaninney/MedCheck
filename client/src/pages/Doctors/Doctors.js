@@ -61,30 +61,30 @@ function Doctors() {
         <div className="medList">
           {docs.length ? (
             docs.map(doc => (
-              <div className="outer border border-info rounded" key={doc._id}>
+              <div className="outer border rounded" key={doc._id}>
                 <Row>
                   <Col size="md-12">
-                    <button onClick={() => deleteDoc(doc._id)} className="btn delete btn-danger">Delete</button>
+                    <button onClick={() => deleteDoc(doc._id)} className="btn delete">Delete</button>
                   </Col>
                 </Row>
                 <Row>
-                  <Col size="md-12">DOCTOR: {doc.name}</Col>
+                  <Col size="md-12"><b>DOCTOR:</b> {doc.name}</Col>
                 </Row>
                 <Row>
-                  <Col size="md-12">PHONE: {doc.phone}</Col>
+                  <Col size="md-12"><b>PHONE:</b> {doc.phone}</Col>
                 </Row>
                 <Row>
-                  <Col size="md-12">ADDRESS LINE 1: {doc.address}</Col>
+                  <Col size="md-12"><b>ADDRESS LINE 1:</b> {doc.address}</Col>
                 </Row>
                 <AddressLine2 addressTwo={doc.address2} />
                 <Row>
-                  <Col size="md-12" >CITY: {doc.city}</Col>
+                  <Col size="md-12" ><b>CITY:</b> {doc.city}</Col>
                 </Row>
                 <Row>
-                  <Col size="md-12" >STATE: {doc.state}</Col>
+                  <Col size="md-12" ><b>STATE:</b> {doc.state}</Col>
                 </Row>
                 <Row>
-                  <Col size="md-12" >ZIP CODE: {doc.zipcode}</Col>
+                  <Col size="md-12" ><b>ZIP CODE:</b> {doc.zipcode}</Col>
                 </Row>
                 <Specialty specialty={doc.specialty} />
               </div>
