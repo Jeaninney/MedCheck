@@ -4,17 +4,22 @@ import { Col, Row, Container } from '../../components/Grid';
 import HomeButton from '../../components/HomeButton';
 import RtnApptBtn from '../../components/RtnApptBtn';
 import API from '../../utils/API';
-
+import { Toast } from 'react-bootstrap';
 
 function AddAppt() {
-    const [purpose, setPurpose] = useState('');
-    const [apptdate, setApptDate] = useState('');
-    const [apptstart, setApptStart] = useState('');
-    const [apptend, setApptEnd] = useState('');
-    const [doctor, setDoctor] = useState('');
-    const [notes, setNotes] = useState('');
-    
-    let passed = true;
+  const [purpose, setPurpose] = useState('');
+  const [apptdate, setApptDate] = useState('');
+  const [apptstart, setApptStart] = useState('');
+  const [apptend, setApptEnd] = useState('');
+  const [doctor, setDoctor] = useState('');
+  const [notes, setNotes] = useState('');
+
+  const [showToast, setShowToast] = useState(false);
+  const [toastText, setToastText] = useState('');
+  const toggleShowToast = () => setShowToast(!showToast);
+
+
+  let passed = true;
 
   const onSubmitHandler = (e) => {
     // Prevent browser refreshing after form submission
@@ -28,7 +33,7 @@ function AddAppt() {
     const value = event.target.value;
     const name = event.target.name;
 
-    if (name === 'purpose') { 
+    if (name === 'purpose') {
       setPurpose(value);
     } else if (name === 'apptdate') {
       setApptDate(value);
@@ -37,22 +42,25 @@ function AddAppt() {
     } else if (name === 'apptend') {
       setApptEnd(value);
     } else if (name === 'doctor') {
-      setDoctor(value);  
+      setDoctor(value);
     } else if (name === 'notes') {
-      setNotes(value);  
+      setNotes(value);
     }
   }
 
   function saveAppts() {
     if (!purpose) {
-        passed = false;
-        alert('Purpose Required');  
+      passed = false;
+      setToastText('Purpose Required');
+      toggleShowToast();
     } else if (!apptdate) {
       passed = false;
-      alert(`Appointment Date Required`);
+      setToastText(`Appointment Date Required`);
+      toggleShowToast();
     } else if (!apptstart) {
-        passed = false;
-        alert('Start Time Required');  
+      passed = false;
+      setToastText('Start Time Required');
+      toggleShowToast();
     }
 
     if (passed) {
@@ -64,18 +72,18 @@ function AddAppt() {
         doctor: doctor,
         notes: notes
       })
-      .then(results => {
-        //console.log(results);
-        setPurpose('');
-        setApptDate('');
-        setApptStart('');
-        setApptEnd('');
-        setDoctor('');
-        setNotes('');
-        passed = true;
-      })
-      // .then(res => loadBooks())
-      .catch(err => console.log(err));
+        .then(results => {
+          //console.log(results);
+          setPurpose('');
+          setApptDate('');
+          setApptStart('');
+          setApptEnd('');
+          setDoctor('');
+          setNotes('');
+          passed = true;
+        })
+        // .then(res => loadBooks())
+        .catch(err => console.log(err));
     }
   }
 
@@ -88,19 +96,32 @@ function AddAppt() {
         id="m2" >
         <p>APPOINTMENTS</p>
       </div>
+
+      <Toast style={{ backgroundColor: 'red' }} show={showToast} onClose={toggleShowToast}>
+                <Toast.Header>
+                  <img
+                    src="holder.js/20x20?text=%20"
+                    className="rounded mr-2"
+                    alt=""
+                  />
+                  <strong className="mr-auto">Error</strong>
+                </Toast.Header>
+                <Toast.Body>{toastText}</Toast.Body>
+              </Toast>
+              
       <Container fluid>
         <Row>
           <Col size='md-12'>
             <form>
-            <label>Purpose</label>
+              <label>Purpose</label>
               <Input
                 value={purpose}
                 name='purpose'
                 onChange={onInputChange}
                 type='text'
                 placeholder='Purpose for appointment'
-              />  
-            <label>Date</label>
+              />
+              <label>Date</label>
               <Input
                 name='apptdate'
                 placeholder='MM-DD-YYYY'
@@ -108,7 +129,7 @@ function AddAppt() {
                 onChange={onInputChange}
                 type='text'
               />
-             <label>Start Time</label>
+              <label>Start Time</label>
               <Input
                 name='apptstart'
                 placeholder='HH:MM'
@@ -116,7 +137,7 @@ function AddAppt() {
                 onChange={onInputChange}
                 type='text'
               />
-             <label>End Time</label>
+              <label>End Time</label>
               <Input
                 name='apptend'
                 placeholder='End Time'
@@ -140,6 +161,7 @@ function AddAppt() {
                 onChange={onInputChange}
                 type='text'
               />
+
               <FormBtn onClick={onSubmitHandler}>
                 Submit Appointment Info
               </FormBtn>
