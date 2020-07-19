@@ -10,5 +10,4 @@ router.use('/appointments', appointmentRoutes);
 router.use('/doctors', doctorRoutes);
 router.use('/medications', medicationRoutes);
 
-
 module.exports = router;
