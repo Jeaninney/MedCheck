@@ -243,6 +243,11 @@ border: none;
   }
 }
 
+
+.clicktosignup {
+	font-size: 20px;
+}
+
 form {
   margin: 15px 15px;
 }

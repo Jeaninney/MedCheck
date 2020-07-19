@@ -1,8 +1,8 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 // import Header from './components/Header';
-// import RegistrationForm from './components/RegistrationForm';
-import Login from './components/Login';
+import SignUp from './pages/SignUp/SignUp';
+import Login from './pages/Login/Login';
 import Home from './pages/Home/Home';
 import Appointments from './pages/Appointments/Appointments';
 import Doctors from './pages/Doctors/Doctors';
@@ -12,27 +12,34 @@ import './App.css';
 import AddMed from './pages/AddMed/AddMed';
 import AddDoc from './pages/AddDoc/AddDoc';
 import AddAppt from './pages/AddAppt/AddAppt';
+import API from "./utils/API";
 
 function App() {
-  const logIn = true;
+	const [loggedin, setloggedin] = useState(false);
+	
+	useEffect(() => {
+		API.getLogin()
+			.then(_ => setloggedin(true))
+			.catch(_ => setloggedin(false));
+	}, []);
+
   return (
     <Router>
       <div className="App">
-        {/* <Header />
-      <RegistrationForm /> */}
-        {/* <Login /> */}
         <Switch>
-          <Route exact path="/" component={Home} />
-          {logIn && <Route exact path="/appointments" component={Appointments} />}
-          {logIn && <Route exact path="/doctors" component={Doctors} />}
-          {logIn && <Route exact path="/medications" component={Medications} />}
-          {!logIn && <Route exact path="/appointments" component={Login} />}
-          {!logIn && <Route exact path="/doctors" component={Login} />}
-          {!logIn && <Route exact path="/medications" component={Login} />}
+          <Route exact path={["/", "/login"]} component={Login} />
+					{/* {loggedin ? <div> */}
+          <Route exact path="/home" component={Home} />
+          <Route exact path="/appointments" component={Appointments} />
+          <Route exact path="/doctors" component={Doctors} />
+          <Route exact path="/medications" component={Medications} />
+          <Route exact path="/signup" component={SignUp} />
           {/* <Route exact path="/searchmed" component={Search} /> */}
           <Route exact path="/addmed" component={AddMed} />
           <Route exact path="/adddoc" component={AddDoc} />
           <Route exact path="/addappt" component={AddAppt} />
+					{/* </div> : <Redirect to="/login" />} */}
+
         </Switch>
       </div>
     </Router>
