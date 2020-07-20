@@ -4,6 +4,7 @@ import { Col, Row, Container } from '../../components/Grid';
 import HomeButton from '../../components/HomeButton';
 import RtnApptBtn from '../../components/RtnApptBtn';
 import API from '../../utils/API';
+import { Toast } from 'react-bootstrap';
 
 function AddAppt() {
   const [purpose, setPurpose] = useState('');
@@ -12,6 +13,10 @@ function AddAppt() {
   const [apptend, setApptEnd] = useState('');
   const [doctor, setDoctor] = useState('');
   const [notes, setNotes] = useState('');
+  const [showToast, setShowToast] = useState(false);
+  const [toastText, setToastText] = useState('');
+  const toggleShowToast = () => setShowToast(!showToast);
+
 
   let passed = true;
 
@@ -62,7 +67,6 @@ function AddAppt() {
                   return false;
                 }  
               }
-
               default:
                 return false;  
 
@@ -109,30 +113,36 @@ function AddAppt() {
     
     if (!purpose) {
       passed = false;
-      alert('Purpose Required');
+      setToastText('Purpose Required');
+      toggleShowToast();
+
     } else if (!apptdate) {
       passed = false;
-      alert(`Appointment Date Required`);
+      setToastText(`Appointment Date Required`);
+      toggleShowToast();
     } else if (!apptstart) {
       passed = false;
-      alert('Start Time Required');
+      setToastText('Start Time Required');
+      toggleShowToast();
     }
     
     if (!validateDate(apptdate)) {
-      console.log(passed);
-      alert('Date is invalid.  Please correct!!!');
       passed = false;
+      setToastText('Date is invalid.  Please correct!!!');
+      toggleShowToast();
     }
 
     if (!validateTime(apptstart)) {
       passed = false;
-      alert('Starting time is invalid.  Please correct!!!');
+      setToastText('Starting time is invalid.  Please correct!!!');
+      toggleShowToast();
     }
 
     if (apptend) {
       if (!validateTime(apptend)) {
         passed = false;
-        alert('End time is invalid.  Please correct!!!');
+        setToastText('End time is invalid.  Please correct!!!');
+        toggleShowToast();
       }
     }
 
@@ -169,6 +179,19 @@ function AddAppt() {
         id="m3" >
         <p>APPOINTMENTS</p>
       </div>
+
+      <Toast style={{ backgroundColor: 'red' }} show={showToast} onClose={toggleShowToast}>
+                <Toast.Header>
+                  <img
+                    src="holder.js/20x20?text=%20"
+                    className="rounded mr-2"
+                    alt=""
+                  />
+                  <strong className="mr-auto">Error</strong>
+                </Toast.Header>
+                <Toast.Body>{toastText}</Toast.Body>
+              </Toast>
+              
       <Container fluid>
         <Row>
           <Col size='md-12'>
