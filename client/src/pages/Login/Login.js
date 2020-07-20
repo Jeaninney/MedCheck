@@ -24,7 +24,7 @@ function Login() {
 		e.preventDefault();
 		console.log("email" + email);
 		console.log(password);
-		API.getLogin({
+		API.getUserData({
 				email: email,
 				password: password
 			})
