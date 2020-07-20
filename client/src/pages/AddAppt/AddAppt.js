@@ -244,7 +244,7 @@ function AddAppt() {
                 onChange={onInputChange}
                 type='text'
               />
-              <FormBtn className='btn-appt' onClick={onSubmitHandler}>
+              <FormBtn className='btn btn-appt' onClick={onSubmitHandler}>
                 Submit Appointment Info
               </FormBtn>
             </form>

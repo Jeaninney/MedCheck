@@ -1,10 +1,11 @@
-import React, { useState} from 'react';
+
+import React, { useState } from 'react';
 import { Input, FormBtn } from '../../components/Form';
 import { Col, Row, Container } from '../../components/Grid';
 import API from '../../utils/API';
 
 function SignUp() {
-	const [un, setemail] = useState('');
+  const [un, setemail] = useState('');
 	const [pw, setpassword] = useState('');
 
 	const onSubmitHandler = (err) => {
@@ -77,7 +78,7 @@ function SignUp() {
                 onChange={onInputChange}
                 type='text'
               />
-              <FormBtn onClick={onSubmitHandler}>
+              <FormBtn className="btn btn-create" onClick={onSubmitHandler}>
                 Create Account
               </FormBtn>
             </form>
