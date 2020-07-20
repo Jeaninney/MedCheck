@@ -7,8 +7,6 @@ function Home() {
 	const [isloggedIn, setIsLoggedIn] = useState(false);
 
 	useEffect(() => {
-
-  
 		API.getUserData()
 			.then(userdata =>{
 				console.log(userdata.data);
