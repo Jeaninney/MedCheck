@@ -3,8 +3,22 @@ const db = require('../models');
 
 mongoose.connect(
   process.env.MONGODB_URI
-  || 'mongodb://localhost/medCheck',
+  || 'mongodb://user:password1@ds259089.mlab.com:59089/heroku_h433l1pt',
 );
+
+const userSeed = [{
+  email: 'howdy',
+  password: 'hi',
+}];
+
+db.User
+  .then(() => db.User.collection.insertMany(userSeed))
+  .then(() => {
+    process.exit(0);
+  })
+  .catch(() => {
+    process.exit(1);
+  });
 
 // Prescription table definition:
 //   medname: String,
@@ -125,31 +139,31 @@ mongoose.connect(
 // doctor: { type: String },
 // notes: { type: String }
 
-const apptSeed = [
-  {
-    purpose: 'Physical',
-    apptdate: '08/01/2020',
-    apptstart: '11:15',
-    apptend: '12:15',
-    doctor: 'Dr. Stokes',
-    notes: 'Yearly physical',
-  },
-  {
-    purpose: 'Check COPD',
-    apptdate: '08/05/2020',
-    apptstart: '2:45',
-    apptend: '3:45',
-    doctor: 'Dr. Stevenson',
-    notes: '',
-  },
-];
+// const apptSeed = [
+//   {
+//     purpose: 'Physical',
+//     apptdate: '08/01/2020',
+//     apptstart: '11:15',
+//     apptend: '12:15',
+//     doctor: 'Dr. Stokes',
+//     notes: 'Yearly physical',
+//   },
+//   {
+//     purpose: 'Check COPD',
+//     apptdate: '08/05/2020',
+//     apptstart: '2:45',
+//     apptend: '3:45',
+//     doctor: 'Dr. Stevenson',
+//     notes: '',
+//   },
+// ];
 
-db.Appointment
-  .remove({})
-  .then(() => db.Appointment.collection.insertMany(apptSeed))
-  .then(() => {
-    process.exit(0);
-  })
-  .catch(() => {
-    process.exit(1);
-  });
+// db.Appointment
+//   .remove({})
+//   .then(() => db.Appointment.collection.insertMany(apptSeed))
+//   .then(() => {
+//     process.exit(0);
+//   })
+//   .catch(() => {
+//     process.exit(1);
+//   });

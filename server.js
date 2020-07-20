@@ -11,7 +11,7 @@ const routes = require('./routes');
 
 const app = express();
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/medCheck', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://user:password1@ds259089.mlab.com:59089/heroku_h433l1pt', { useNewUrlParser: true });
 
 // Define middleware here
 app.use(express.urlencoded({ extended: false }));
@@ -35,7 +35,7 @@ app.use(routes);
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === 'production') {
-  // app.use(express.static('client/build'));
+  app.use(express.static('client/build'));
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, './client/build/index.html'));
   });
