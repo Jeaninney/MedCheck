@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import Header from './components/Header';
 import SignUp from './pages/SignUp/SignUp';
 import Login from './pages/Login/Login';
@@ -12,16 +12,16 @@ import './App.css';
 import AddMed from './pages/AddMed/AddMed';
 import AddDoc from './pages/AddDoc/AddDoc';
 import AddAppt from './pages/AddAppt/AddAppt';
-import API from "./utils/API";
+// import API from "./utils/API";
 
 function App() {
-	const [loggedin, setloggedin] = useState(false);
+	// const [loggedin, setloggedin] = useState(false);
 	
-	useEffect(() => {
-		API.getLogin()
-			.then(_ => setloggedin(true))
-			.catch(_ => setloggedin(false));
-	}, []);
+	// useEffect(() => {
+	// 	API.getLogin()
+	// 		.then(_ => setloggedin(true))
+	// 		.catch(_ => setloggedin(false));
+	// }, []);
 
   return (
     <Router>
