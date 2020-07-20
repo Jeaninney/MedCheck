@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
 import { Input } from '../../components/Form';
 import { Col, Row, Container } from '../../components/Grid';
 import API from '../../utils/API';
@@ -8,17 +7,7 @@ function Login() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
-	let passed = true;
-	
-	// const submitHandler = (e) => {
-	// 	// Prevent browser refreshing after form submission
-	// 	e.preventDefault();
-	// 	// console.log(e.target);
-	// 	// Call fetch books async function
-	// 	submitLogin();
-	// }
-
-	const onInputChange = (event) => {
+		const onInputChange = (event) => {
     const value = event.target.value;
 		const name = event.target.name;
 		
@@ -64,8 +53,7 @@ function Login() {
         <Row>
           <Col size='md-12'>
             <form>
-							<div className="form-group form-inline">
-            <label className="mr-2" >Email Address</label>
+            <label >Email Address</label>
               <Input
                 value={email}
                 name='email'
@@ -73,9 +61,9 @@ function Login() {
 								type='email'
 								placeholder='Email (required)'
               />  
-							</div>
-							<div className="form-group form-inline">
-            <label className="mr-2">Password</label>
+							
+							
+            <label>Password</label>
               <Input
                 name='password'
                 placeholder='password'
@@ -83,7 +71,7 @@ function Login() {
                 onChange={onInputChange}
 								type='text'
               />
-							</div>
+							
 							<button 
 								type="submit" 
 								className="btn btn-success"

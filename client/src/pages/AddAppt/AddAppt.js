@@ -180,7 +180,7 @@ function AddAppt() {
         <p>APPOINTMENTS</p>
       </div>
 
-      <Toast style={{ backgroundColor: 'red' }} show={showToast} onClose={toggleShowToast}>
+      <Toast style={{ backgroundColor: '#F8B71E' }} show={showToast} onClose={toggleShowToast}>
                 <Toast.Header>
                   <img
                     src="holder.js/20x20?text=%20"

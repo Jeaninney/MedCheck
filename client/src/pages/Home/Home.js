@@ -39,7 +39,7 @@ function Home() {
           <Link to="/medications"><button type="button" className="medications"> MEDICATIONS </button></Link>
           <Link to="/doctors"><button type="button" className="doctors"> DOCTORS </button></Link>
           <Link to="/appointments"><button type="button" className="appointments"> APPOINTMENTS </button></Link>
-			 <button type="button" className="appointments" onClick={submitHandle}> Logout </button>
+			 			<button type="button" className="appointments logout" onClick={submitHandle}> LOGOUT </button>
 					
         </Col>
       </Row>
