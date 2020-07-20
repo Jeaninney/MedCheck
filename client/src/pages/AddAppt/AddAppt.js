@@ -13,7 +13,6 @@ function AddAppt() {
   const [apptend, setApptEnd] = useState('');
   const [doctor, setDoctor] = useState('');
   const [notes, setNotes] = useState('');
-
   const [showToast, setShowToast] = useState(false);
   const [toastText, setToastText] = useState('');
   const toggleShowToast = () => setShowToast(!showToast);
@@ -21,6 +20,66 @@ function AddAppt() {
 
   let passed = true;
 
+  function validateDate(date)  
+  {
+    var datePattern = /^\d{2}\/\d{2}\/\d{4}$/;
+      if (datePattern.test(date)) { 
+          console.log(date)
+          let monthfield=date.split("/")[0];
+          let dayfield=date.split("/")[1];
+          let yearfield=date.split("/")[2];
+
+          switch (parseInt(monthfield)) {
+            case 1:
+            case 3:
+            case 5: 
+            case 7: 
+            case 8:
+            case 10:
+            case 12:
+              if (parseInt(dayfield) > 0 && (parseInt(dayfield) < 32)) {
+                return true;
+              } else {
+                return false;
+              }
+              
+            case 4:
+            case 6:
+            case 9: 
+            case 11: 
+              if (parseInt(dayfield) > 0 && (parseInt(dayfield) < 31)) {
+                return true;
+              } else {
+                return false;
+              }
+
+            case 2:
+              if (parseInt(yearfield) % 4 === 0) {
+                if (parseInt(dayfield) > 0 && (parseInt(dayfield) < 30)) {
+                  return true;
+                } else {
+                  return false;
+                }
+              } else {
+                if (parseInt(dayfield) > 0 && (parseInt(dayfield) < 29)) {
+                  return true;
+                } else {
+                  return false;
+                }  
+              }
+              default:
+                return false;  
+
+          }
+      }
+  }
+  
+  
+  function validateTime(time)  {
+    var timePattern = /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
+      return timePattern.test(time);
+  }
+          
   const onSubmitHandler = (e) => {
     // Prevent browser refreshing after form submission
     e.preventDefault();
@@ -49,10 +108,14 @@ function AddAppt() {
   }
 
   function saveAppts() {
+
+    passed = true;
+    
     if (!purpose) {
       passed = false;
       setToastText('Purpose Required');
       toggleShowToast();
+
     } else if (!apptdate) {
       passed = false;
       setToastText(`Appointment Date Required`);
@@ -61,6 +124,26 @@ function AddAppt() {
       passed = false;
       setToastText('Start Time Required');
       toggleShowToast();
+    }
+    
+    if (!validateDate(apptdate)) {
+      passed = false;
+      setToastText('Date is invalid.  Please correct!!!');
+      toggleShowToast();
+    }
+
+    if (!validateTime(apptstart)) {
+      passed = false;
+      setToastText('Starting time is invalid.  Please correct!!!');
+      toggleShowToast();
+    }
+
+    if (apptend) {
+      if (!validateTime(apptend)) {
+        passed = false;
+        setToastText('End time is invalid.  Please correct!!!');
+        toggleShowToast();
+      }
     }
 
     if (passed) {
@@ -93,7 +176,7 @@ function AddAppt() {
         style={{
           height: '20%', clear: 'both', paddingTop: 20, paddingBottom: 20, textAlign: 'center',
         }}
-        id="m2" >
+        id="m3" >
         <p>APPOINTMENTS</p>
       </div>
 
@@ -124,7 +207,7 @@ function AddAppt() {
               <label>Date</label>
               <Input
                 name='apptdate'
-                placeholder='MM-DD-YYYY'
+                placeholder='MM/DD/YYYY'
                 value={apptdate}
                 onChange={onInputChange}
                 type='text'
@@ -161,18 +244,21 @@ function AddAppt() {
                 onChange={onInputChange}
                 type='text'
               />
-
-              <FormBtn onClick={onSubmitHandler}>
+              <FormBtn className='btn-appt' onClick={onSubmitHandler}>
                 Submit Appointment Info
               </FormBtn>
             </form>
           </Col>
         </Row>
       </Container>
-      <RtnApptBtn />
-      <HomeButton />
+      <Row>
+        <Col size="md-12">
+          <RtnApptBtn />
+          <HomeButton />
+        </Col>
+      </Row>
     </div>
-  );
-}
+    );
+}  
 
 export default AddAppt;
