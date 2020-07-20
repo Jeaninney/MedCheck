@@ -4,6 +4,7 @@ import { Col, Row, Container } from '../../components/Grid';
 import HomeButton from '../../components/HomeButton';
 import RtnDocBtn from '../../components/RtnDocBtn';
 import API from '../../utils/API';
+import { Toast } from 'react-bootstrap';
 
 function validatePhoneNo(phone)  {
   var phoneNumPattern = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
@@ -23,7 +24,10 @@ function AddDoc() {
   const [addresstwo, setAddressTwo] = useState('');
   const [city, setCity] = useState('');
   const [state, setState] = useState('');
-  const [zipcode, setZipCode] = useState('');
+	const [zipcode, setZipCode] = useState('');
+	const [showToast, setShowToast] = useState(false);
+  const [toastText, setToastText] = useState('');
+  const toggleShowToast = () => setShowToast(!showToast);
 
   let passed = true;
 
@@ -97,37 +101,45 @@ function AddDoc() {
   function saveDocs() {
     passed = true;
     if (!doctorname) {
-      passed = false;
-      alert(`Doctor's Name Required`);
+			passed = false;
+			setToastText(`Doctor's Name Required`);
+      toggleShowToast();
     } else if (!phonenumber) {
-      passed = false;
-      alert('Phone Number Required');
+			passed = false;
+			setToastText(`Phone Number Required`);
+      toggleShowToast();
     } else if (!addressone) {
-      passed = false;
-      alert('Address Line One Required');
+			passed = false;
+			setToastText(`Address Line One Required`);
+      toggleShowToast();
     } else if (!city) {
-      passed = false;
-      alert('City Required');
+			passed = false;
+			setToastText(`City Required`);
+      toggleShowToast();
     } else if (!state) {
-      passed = false;
-      alert('State Required');
+			passed = false;
+			setToastText(`State Required`);
+      toggleShowToast();
     } else if (!zipcode) {
-      passed = false;
-      alert('Zip Code Required');
+			passed = false;
+			setToastText(`Zip Code Required`);
+      toggleShowToast();
     }
 
     if (validateZipCode(zipcode)) {
       passed = true;
     } else {
-      passed = false;
-      alert("Zip code is invalid");
+			passed = false;
+			setToastText(`Zip code is invalid`);
+      toggleShowToast();
     }
 
     if (validatePhoneNo(phonenumber)) {
       passed = true;
     } else {
-      passed = false;
-      alert("Phone number is invalid");
+			passed = false;
+			setToastText(`Phone number is invalid`);
+      toggleShowToast();
     }
 
     if (passed) {
@@ -166,6 +178,17 @@ function AddDoc() {
         id="m2" >
         <p>DOCTORS</p>
       </div>
+			<Toast style={{ backgroundColor: '#F8B71E' }} show={showToast} onClose={toggleShowToast}>
+                <Toast.Header>
+                  <img
+                    src="holder.js/20x20?text=%20"
+                    className="rounded mr-2"
+                    alt=""
+                  />
+                  <strong className="mr-auto">Error</strong>
+                </Toast.Header>
+                <Toast.Body>{toastText}</Toast.Body>
+              </Toast>
       <Container fluid>
         <Row>
           <Col size='md-12'>

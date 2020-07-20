@@ -4,13 +4,17 @@ import { Input, FormBtn } from '../../components/Form';
 import HomeButton from '../../components/HomeButton';
 import BackBtn from '../../components/BackBtn';
 import API from '../../utils/API';
+import { Toast } from 'react-bootstrap';
 
 function AddMedForm() {
   const [medName, setMedName] = useState('');
   const [dosage, setDosage] = useState('');
   const [timeToTake, setTime] = useState('');
   const [purpose, setPurpose] = useState('');
-  const [prescribingDoc, setDoctor] = useState('');
+	const [prescribingDoc, setDoctor] = useState('');
+	const [showToast, setShowToast] = useState(false);
+  const [toastText, setToastText] = useState('');
+  const toggleShowToast = () => setShowToast(!showToast);
   let passed = true;
 
   const onSubmitHandler = (e) => {
@@ -40,14 +44,17 @@ function AddMedForm() {
 
   function saveMeds() {
     if (!medName) {
-      passed = false;
-      alert("Please enter Medication Name");
+			passed = false;
+			setToastText('Please enter Medication Name');
+      toggleShowToast();
     } else if (!dosage) {
-      passed = false;
-      alert("Please enter Dosage");
+			passed = false;
+			setToastText('Please enter Dosage');
+      toggleShowToast();
     } else if (!timeToTake) {
-      passed = false;
-      alert("Please enter a time to take");
+			passed = false;
+			setToastText('Please enter a time to take');
+      toggleShowToast();
     }
 
     if (passed) {
@@ -82,6 +89,17 @@ function AddMedForm() {
       >
         <p>Add Medication</p>
       </div>
+			<Toast style={{ backgroundColor: '#F8B71E' }} show={showToast} onClose={toggleShowToast}>
+                <Toast.Header>
+                  <img
+                    src="holder.js/20x20?text=%20"
+                    className="rounded mr-2"
+                    alt=""
+                  />
+                  <strong className="mr-auto">Error</strong>
+                </Toast.Header>
+                <Toast.Body>{toastText}</Toast.Body>
+              </Toast>
       <Container fluid>
         <Row>
           <Col size='md-12'>
