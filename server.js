@@ -11,7 +11,7 @@ const routes = require('./routes');
 
 const app = express();
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/medCheck', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://user:password1@ds259089.mlab.com:59089/heroku_h433l1pt', { useNewUrlParser: true });
 
 // Define middleware here
 app.use(express.urlencoded({ extended: false }));
