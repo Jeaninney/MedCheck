@@ -257,7 +257,7 @@ function AddDoc() {
                 onChange={onInputChange}
                 type='text'
               />
-              <FormBtn className='btn-doc' onClick={onSubmitHandler}>
+              <FormBtn className='btn btn-doc' onClick={onSubmitHandler}>
                 Submit Doctor Info
               </FormBtn>
             </form>
