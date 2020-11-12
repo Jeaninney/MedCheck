@@ -1,6 +1,9 @@
 {
   "name": "finalproject",
   "version": "0.1.0",
+  "engines": {
+    "yarn": "1.x"
+  },
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -52,6 +55,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "if-env": "^1.0.4",
+    "jquery": "1.9.1",
     "mongoose": "^5.9.23",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
